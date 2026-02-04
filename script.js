@@ -23,6 +23,29 @@ document.addEventListener("DOMContentLoaded", function () {
             hamburger.classList.remove("active");
         });
     });
+
+    // Remove focus from clicked elements to clear hover states
+    document.addEventListener("click", function(event) {
+        // If clicking on any interactive element, blur it after a short delay
+        const clickedElement = event.target;
+        if (clickedElement.tagName === 'A' || 
+            clickedElement.tagName === 'BUTTON' || 
+            clickedElement.classList.contains('team-member') ||
+            clickedElement.classList.contains('partner')) {
+            setTimeout(() => {
+                if (document.activeElement) {
+                    document.activeElement.blur();
+                }
+            }, 100);
+        }
+    });
+
+    // Add touch end handler for mobile devices
+    document.addEventListener("touchend", function() {
+        if (document.activeElement) {
+            document.activeElement.blur();
+        }
+    });
 });
 
 
@@ -54,10 +77,6 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             });
         }
     });
-});
-
-document.querySelector('.register-button').addEventListener('click', (event) => {
-    window.open(event.target.href, '_blank');
 });
 
 // Smooth scrolling for the team container
@@ -161,7 +180,7 @@ document.addEventListener("DOMContentLoaded", function() {
 });
 
 function expandSponsor(selectedSponsor) {
-    const allSponsors = document.querySelectorAll('.sponsor');
+    const allSponsors = document.querySelectorAll('.partner');
     const isExpanded = selectedSponsor.classList.contains('expanded');
 
     allSponsors.forEach(sponsor => {
@@ -177,3 +196,16 @@ function expandSponsor(selectedSponsor) {
         });
     }
 }
+
+// Close expanded partner when clicking outside
+document.addEventListener('click', function(event) {
+    const allPartners = document.querySelectorAll('.partner');
+    const clickedPartner = event.target.closest('.partner');
+    
+    // If click is outside any partner, collapse all
+    if (!clickedPartner) {
+        allPartners.forEach(partner => {
+            partner.classList.remove('expanded', 'dimmed');
+        });
+    }
+});

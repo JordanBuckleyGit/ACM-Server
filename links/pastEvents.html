@@ -32,7 +32,7 @@
                         <li><a href="../index.html#events">Events</a></li>
                         <li><a href="../index.html#team">Our Team</a></li>
                         <li><a href="../index.html#contact">Contact</a></li>
-                        <li><a href="">Past Events</a></li>
+                        <li><a href="" class="past-events-link">Past Events</a></li>
                     </ul>
                     <div class="hamburger" id="hamburger">&#9776;</div>
                     <!-- Hamburger Menu -->
@@ -44,13 +44,18 @@
                 <img
                     src="../images/test.jpg"
                     alt="Our upcoming 2025 ACM event!"
+                    id="upcomingEventImage"
+                    onclick="openFullscreen(this)"
                 />
+                <div class="fullscreen-icon" onclick="openFullscreen(document.getElementById('upcomingEventImage'))">
+                    <i class="fas fa-expand"></i>
+                </div>
                 <figcaption>
                     <h2>Upcoming Event</h2>
                     <p>
-                        Join us for the <strong>2025 Hackathon</strong> at UCC’s Western Gateway Building! Dive into a day of coding,
+                        Join us for the <strong>2026 Hackathon</strong> at UCC's Western Gateway Building! Dive into a day of coding,
                         problem-solving, and teamwork with fellow tech enthusiasts. Whether you're a beginner or a pro, 
-                        there’s something for everyone.
+                        there's something for everyone.
                     </p>
                     <p>
                         Win awesome prizes, meet industry leaders, and make new connections. 
@@ -62,11 +67,43 @@
                 <div>
                     <figure>
                         <img
-                            src="../images/event2.jpg"
+                            src="../images/event4.JPG"
                             alt="A picture of an ACM event!"
                         />
                         <figcaption>
                             <h2>Last Year</h2>
+                            <p>
+                                The 2025 hackathon brought together talented participants for an incredible day 
+                                of innovation and collaboration. Teams showcased exceptional problem-solving skills 
+                                and creativity, tackling challenging problems with enthusiasm. The event fostered a 
+                                vibrant atmosphere of learning and teamwork, creating lasting memories and inspiring 
+                                connections among all participants.
+                            </p>
+                            <button id="2025">View More</button>
+                            <div id="modal2025" class="modal">
+                                <section
+                                    id="modal2025Content"
+                                    class="modal-content"
+                                >
+                                    <h3>2025 Past Paper</h3>
+                                    <p>
+                                        The 2025 past papers are available to
+                                        use and download here!
+                                    </p>
+                                    <a href="files/IrlCPC_Problems_2025.pdf" target="_blank">Download Past Paper</a>
+                                </section>
+                            </div>
+                        </figcaption>
+                    </figure>
+                </div>
+                <div>
+                    <figure>
+                        <img
+                            src="../images/event2.jpg"
+                            alt="A picture of an ACM event from 2024!"
+                        />
+                        <figcaption>
+                            <h2>2024</h2>
                             <p>
                                 Last year's hackathon was a thrilling experience, with 62 teams coming together
                                 to solve challenges and push the boundaries of innovation. Teams enjoyed the 
@@ -95,7 +132,7 @@
                     <figure>
                         <img
                             src="../images/event3.jpg"
-                            alt="A picture of an ACM event from 2019!"
+                            alt="A picture of an ACM event from 2021!"
                         />
                         <figcaption>
                             <h2>2021</h2>
@@ -204,7 +241,7 @@
             </div>
 
             <div class="footer-bottom">
-                <p>&copy; 2024 UCC ACM Student Chapter. All rights reserved.</p>
+                <p>&copy; 2026 UCC ACM Student Chapter. All rights reserved.</p>
                 <a
                     href="links/privacyPolicy.html"
                     target="_blank"

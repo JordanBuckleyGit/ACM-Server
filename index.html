@@ -32,9 +32,10 @@
                         <li><a href="#home">Home</a></li>
                         <li><a href="#about">About</a></li>
                         <li><a href="#events">Events</a></li>
+                        <li><a href="#schedule">Schedule</a></li>
                         <li><a href="#team">Our Team</a></li>
                         <li><a href="#contact">Contact</a></li>
-                        <li><a href="links/pastEvents.html">Past Events</a></li>
+                        <li><a href="links/pastEvents.html" class="past-events-link">Past Events</a></li>
                     </ul>
                     <div class="hamburger" id="hamburger">&#9776;</div>
                     <!-- Hamburger Menu -->
@@ -85,29 +86,88 @@
                 </a>
             </section>
 
-            <section id="sponsors" class="content-section">
-                <h2>Our Sponsors</h2>
-                <p>We are grateful to our sponsors for their support in making our events possible.</p>
-                <div class="sponsors-container">
-                    <div class="sponsor" onclick="expandSponsor(this)">
+            <section id="schedule" class="content-section">
+                <h2>Event Schedule</h2>
+                <p>IrlCPC 2026 - March 7, 2026</p>
+                <div class="schedule-container">
+                    <div class="schedule-item">
+                        <div class="schedule-time">9:30 - 10:00</div>
+                        <div class="schedule-details">
+                            <h3>Registration</h3>
+                            <p>Check-in and welcome</p>
+                        </div>
+                    </div>
+                    <div class="schedule-item">
+                        <div class="schedule-time">9:30 - 10:30</div>
+                        <div class="schedule-details">
+                            <h3>Coffee/Tea and Networking</h3>
+                            <p>Meet other participants and enjoy refreshments</p>
+                        </div>
+                    </div>
+                    <div class="schedule-item">
+                        <div class="schedule-time">10:30 - 11:30</div>
+                        <div class="schedule-details">
+                            <h3>Practice Session</h3>
+                            <p>Warm up and test the competition environment</p>
+                        </div>
+                    </div>
+                    <div class="schedule-item">
+                        <div class="schedule-time">11:30 - 13:00</div>
+                        <div class="schedule-details">
+                            <h3>Lunch and more Networking</h3>
+                            <p>Enjoy lunch and connect with fellow competitors</p>
+                        </div>
+                    </div>
+                    <div class="schedule-item">
+                        <div class="schedule-time">13:00 - 17:00</div>
+                        <div class="schedule-details">
+                            <h3>Competition</h3>
+                            <p>Main programming competition begins</p>
+                        </div>
+                    </div>
+                    <div class="schedule-item">
+                        <div class="schedule-time">17:00 - 17:20</div>
+                        <div class="schedule-details">
+                            <h3>Coffee/Tea/Snacks and Networking</h3>
+                            <p>Refreshments break while results are finalized</p>
+                        </div>
+                    </div>
+                    <div class="schedule-item">
+                        <div class="schedule-time">17:00 - 18:30</div>
+                        <div class="schedule-details">
+                            <h3>Award Ceremony & Short Company Presentations</h3>
+                            <p>Winners announced, prizes awarded, and partner presentations</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section id="partners" class="content-section">
+                <h2>Our Partners</h2>
+                <p>We are grateful to our partners for their support in making our events possible.</p>
+                <div class="partners-container">
+                    <div class="partner" onclick="expandSponsor(this)">
                         <img src="images/cadence.png" alt="Cadence">
                     </div>
-                    <div class="sponsor" onclick="expandSponsor(this)">
-                        <img src="images/keelvar.png" alt="Keelvar">
-                    </div>
-                    <div class="sponsor" onclick="expandSponsor(this)">
-                        <img src="images/insight.png" alt="Insight">
-                    </div>
-                    <div class="sponsor" onclick="expandSponsor(this)">
+                    <div class="partner" onclick="expandSponsor(this)">
                         <img src="images/netapp.png" alt="NetApp">
                     </div>
-                    <div class="sponsor" onclick="expandSponsor(this)">
-                        <img src="images/f5.png" alt="F5">
-                    </div>
-                    <div class="sponsor" onclick="expandSponsor(this)">
+                    <div class="partner" onclick="expandSponsor(this)">
                         <img src="images/nginx.png" alt="NginX">
                     </div>
-                    <!-- Add more sponsors as needed -->
+                    <div class="partner" onclick="expandSponsor(this)">
+                        <img src="images/keelvar.png" alt="Keelvar">
+                    </div>
+                    <div class="partner" onclick="expandSponsor(this)">
+                        <img src="images/google.png" alt="Google" onerror="this.style.display='none'; this.parentElement.innerHTML='<h3 style=\'color: #4edeef; margin: 0;\'>Google</h3>';">
+                    </div>
+                    <div class="partner" onclick="expandSponsor(this)">
+                        <img src="images/f5.png" alt="F5">
+                    </div>
+                    <div class="partner" onclick="expandSponsor(this)">
+                        <img src="images/insight.png" alt="Insight">
+                    </div>
+                    <!-- Add more partners as needed -->
                 </div>
             </section>
 
@@ -141,7 +201,7 @@
                         </div>
                         <p class="contact-description">
                             Directly contact us about your queries in regards to
-                            sponsorships or general questions regarding our
+                            partnerships or general questions regarding our
                             events!
                         </p>
                     </div> -->
@@ -264,7 +324,7 @@
 
                 <div class="footer-bottom">
                     <p>
-                        &copy; 2025 UCC ACM Student Chapter. All rights
+                        &copy; 2026 UCC ACM Student Chapter. All rights
                         reserved.
                     </p>
                     <a

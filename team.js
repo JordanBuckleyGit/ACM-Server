@@ -23,14 +23,14 @@ const members = [
             "Andrea is an Assistant Professor.",
         linkedIn: "https://www.linkedin.com/in/andrea-visentin-a4b9a585/",
     },
-    // {
-    //     firstName: "Marlon",
-    //     lastName: "Ares",
-    //     role: "Secretary",
-    //     description: "Marlon manages minutes of committee meetings and oversees Chapter administration.",
-    //     linkedIn:
-    //         "https://www.linkedin.com/in/marlon-jesus-ares-milian-4b2a16203/",
-    // },
+    {
+        firstName: "Mikolaj",
+        lastName: "Wujek",
+        role: "Vice Chair",
+        description:
+            "Mikolaj is the Vice Chair of UCC ACM",
+        linkedIn: "https://www.linkedin.com/in/mikolaj-wujek-132354333/",
+    },
     {
         firstName: "Jordan",
         lastName: "Buckley",
@@ -50,18 +50,34 @@ const members = [
     {
         firstName: "Dan",
         lastName: "Bokete",
-        role: "OCM",
+        role: "Webmaster Team",
         description:
             "Dan assisted with the development/managing of the website and online infrastructure.",
         linkedIn: "https://www.linkedin.com/in/dan-bokete-672a72316/",
     },
-    {
-        firstName: "Mikolaj",
-        lastName: "Wujek",
-        role: "Vice Chair",
+        {
+        firstName: "Jake",
+        lastName: "Sparks",
+        role: "Finance Office",
         description:
-            "Mikolaj is the Vice Chair of UCC ACM",
-        linkedIn: "https://www.linkedin.com/in/mikolaj-wujek-132354333/",
+            "Jake ensures all finances are well-managed for events.",
+        linkedIn: "https://www.linkedin.com/in/jake-sparks-9b700936a/",
+    },
+    {
+        firstName: "Ishaan",
+        lastName: "Anwar",
+        role: "Webmaster Team",
+        description:
+            "Ishaan helped develop the website, and server infrastructure.",
+        linkedIn: "https://www.linkedin.com/in/ishaan-anwar-843ab519a/",
+    },
+    {
+        firstName: "Swithin",
+        lastName: "Pais",
+        role: "Webmaster Team",
+        description:
+            "Swithin helped develop the website, and server infrastructure.",
+        linkedIn: "https://www.linkedin.com/in/swithin-pais-70501926b/",
     },
     // {
     //     firstName: "Ivan",
@@ -92,13 +108,15 @@ const teamContainer = document.getElementById("teamContainer");
 
 let html = "";
 members.forEach((person) => {
+    const imagePath = `images/${person.firstName.toLowerCase()}_${person.lastName.toLowerCase()}.jpg`;
     const rawHtml = `<div
     class="team-member"
     onclick="expandTeamMember(this)"
     >
     <img
-        src="images/${person.firstName.toLowerCase()}_${person.lastName.toLowerCase()}.jpg"
+        src="${imagePath}"
         alt="An image of ${person.firstName} ${person.lastName}"
+        onerror="this.src='images/acmLogo.png'"
     />
     <h3>${person.firstName} ${person.lastName ? person.lastName : ""}</h3>
     <p class="role">${person.role ? person.role : "Acm Member"}</p>
