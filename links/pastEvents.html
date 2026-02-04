@@ -1,235 +1,219 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-    <head>
-        <meta charset="UTF-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <title>Past Events</title>
-        <link rel="icon" href="../icons/favicon.png" />
-        <link rel="stylesheet" href="../stylesheet.css" />
-        <link rel="stylesheet" href="events.css" />
-        <link
-            href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap"
-            rel="stylesheet"
-        />
-        <link
-            rel="stylesheet"
-            href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
-        />
-        <!-- Font Awesome -->
-        <script defer src="../script.js"></script>
-        <!-- Link to JS file -->
-    </head>
-    <body id="top">
-        <div class="container">
-            <header>
-                <!-- Navigation Bar -->
-                <nav class="nav-container">
-                    <img src="../images/acmLogo.png" alt="Acm Logo" />
-                    <h1 class="logo">UCC's ACM Student Chapter</h1>
-                    <ul class="nav-bar" id="nav-bar">
-                        <li><a href="../index.html#home">Home</a></li>
-                        <li><a href="../index.html#about">About</a></li>
-                        <li><a href="../index.html#events">Events</a></li>
-                        <li><a href="../index.html#team">Our Team</a></li>
-                        <li><a href="../index.html#contact">Contact</a></li>
-                        <li><a href="">Past Events</a></li>
-                    </ul>
-                    <div class="hamburger" id="hamburger">&#9776;</div>
-                    <!-- Hamburger Menu -->
-                </nav>
-            </header>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Past Events | UCC ACM Chapter</title>
+    <link rel="icon" href="../icons/favicon.png" />
+    <link rel="stylesheet" href="../stylesheet.css" />
+    <link rel="stylesheet" href="events.css" />
+    <link rel="stylesheet" href="../changes.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+    />
+    <!-- Font Awesome -->
+    <script defer src="../script.js"></script>
+    <!-- Link to JS file -->
+  </head>
+  <body id="top">
+    <div class="container">
+      <header>
+        <!-- Navigation Bar -->
+        <nav class="nav-container">
+          <img src="../images/acmLogo.png" alt="Acm Logo" />
+          <h1 class="logo">UCC's ACM Student Chapter</h1>
+          <ul class="nav-bar" id="nav-bar">
+            <li><a href="../index.html#home">Home</a></li>
+            <li><a href="../index.html#about">About</a></li>
+            <li><a href="../index.html#events">Events</a></li>
+            <li><a href="../index.html#team">Our Team</a></li>
+            <li><a href="../index.html#contact">Contact</a></li>
+            <li><a href="">Past Events</a></li>
+          </ul>
+          <div class="hamburger" id="hamburger">&#9776;</div>
+          <!-- Hamburger Menu -->
+        </nav>
+      </header>
+    </div>
+    <main>
+      <figure class="upcoming-event">
+        <img src="../images/test.jpg" alt="Our upcoming 2025 ACM event!" />
+        <figcaption>
+          <h2>Upcoming Event</h2>
+          <p>
+            Join us for the <strong>2025 Hackathon</strong> at UCC’s Western
+            Gateway Building! Dive into a day of coding, problem-solving, and
+            teamwork with fellow tech enthusiasts. Whether you're a beginner or
+            a pro, there’s something for everyone.
+          </p>
+          <p>
+            Win awesome prizes, meet industry leaders, and make new connections.
+            Don’t miss out—registration is open now on our
+            <a href="../index.html">home page</a>.
+          </p>
+        </figcaption>
+      </figure>
+      <section>
+        <div>
+          <figure>
+            <img src="../images/event2.jpg" alt="A picture of an ACM event!" />
+            <figcaption>
+              <h2>Last Year</h2>
+              <p>
+                Last year's hackathon was a thrilling experience, with 62 teams
+                coming together to solve challenges and push the boundaries of
+                innovation. Teams enjoyed the collaborative spirit, diving into
+                problem-solving and creating unique solutions. It was a day
+                filled with learning, creativity, and unforgettable memories,
+                making it a truly great experience for everyone involved.
+              </p>
+              <button id="2024">View More</button>
+              <div id="modal2024" class="modal">
+                <section id="modal2024Content" class="modal-content">
+                  <h3>2024 Past Paper</h3>
+                  <p>
+                    The 2024 past papers are available to use and download here!
+                  </p>
+                  <a href="files/IrlCPC_Problems_2024.pdf" target="_blank"
+                    >Download Past Paper</a
+                  >
+                </section>
+              </div>
+            </figcaption>
+          </figure>
         </div>
-        <main>
-            <figure class="upcoming-event">
-                <img
-                    src="../images/test.jpg"
-                    alt="Our upcoming 2025 ACM event!"
-                />
-                <figcaption>
-                    <h2>Upcoming Event</h2>
-                    <p>
-                        Join us for the <strong>2025 Hackathon</strong> at UCC’s Western Gateway Building! Dive into a day of coding,
-                        problem-solving, and teamwork with fellow tech enthusiasts. Whether you're a beginner or a pro, 
-                        there’s something for everyone.
-                    </p>
-                    <p>
-                        Win awesome prizes, meet industry leaders, and make new connections. 
-                        Don’t miss out—registration is open now on our <a href="../index.html">home page</a>.
-                    </p>
-                </figcaption>
-            </figure>
-            <section>
-                <div>
-                    <figure>
-                        <img
-                            src="../images/event2.jpg"
-                            alt="A picture of an ACM event!"
-                        />
-                        <figcaption>
-                            <h2>Last Year</h2>
-                            <p>
-                                Last year's hackathon was a thrilling experience, with 62 teams coming together
-                                to solve challenges and push the boundaries of innovation. Teams enjoyed the 
-                                collaborative spirit, diving into problem-solving and creating unique solutions. 
-                                It was a day filled with learning, creativity, and unforgettable memories, making 
-                                it a truly great experience for everyone involved.
-                            </p>
-                            <button id="2024">View More</button>
-                            <div id="modal2024" class="modal">
-                                <section
-                                    id="modal2024Content"
-                                    class="modal-content"
-                                >
-                                    <h3>2024 Past Paper</h3>
-                                    <p>
-                                        The 2024 past papers are available to
-                                        use and download here!
-                                    </p>
-                                    <a href="files/IrlCPC_Problems_2024.pdf" target="_blank">Download Past Paper</a>
-                                </section>
-                            </div>
-                        </figcaption>
-                    </figure>
-                </div>
-                <div>
-                    <figure>
-                        <img
-                            src="../images/event3.jpg"
-                            alt="A picture of an ACM event from 2019!"
-                        />
-                        <figcaption>
-                            <h2>2021</h2>
-                            <p>
-                                The 2021 hackathon was a remarkable event, showcasing the resilience and 
-                                creativity of participants despite the challenges of the year. Teams came 
-                                together tackling complex problems with enthusiasm and ingenuity. 
-                                The energy and dedication displayed by everyone made it a truly memorable 
-                                experience, highlighting the power of innovation and collaboration.
-                            </p>
-                            <button id="2021">View More</button>
-                            <div id="modal2021" class="modal">
-                                <section
-                                    id="modal2021Content"
-                                    class="modal-content"
-                                >
-                                    <h3>2021 Past Paper</h3>
-                                    <p>
-                                        The 2021 past papers are available to
-                                        use and download here!
-                                    </p>
-                                    <a href="files/IrlCPC_Problems_2021.pdf" target="_blank">Download Past Paper</a>
-                                </section>
-                            </div>
-                        </figcaption>
-                    </figure>
-                </div>
-                <div>
-                    <figure>
-                        <img
-                            src="../images/event.jpg"
-                            alt="A picture of an ACM event from 2019!"
-                        />
-                        <figcaption>
-                            <h2>2019</h2>
-                            <p>
-                                In 2019, we hosted another exciting hackathon that brought together 
-                                passionate minds to solve real-world problems. Teams worked tirelessly, blending 
-                                creativity and technical skills to develop innovative solutions. The event was a 
-                                celebration of collaboration and determination, leaving everyone inspired and eager 
-                                for more. It was a fantastic way to kick off the year!
-                            </p>
-                            <button id="2019">View More</button>
-                            <div id="modal2019" class="modal">
-                                <section
-                                    id="modal2019Content"
-                                    class="modal-content"
-                                >
-                                    <h3>2019 Past Paper</h3>
-                                    <p>
-                                        The 2019 past papers are available to
-                                        use and download here!
-                                    </p>
-                                    <a href="files/IrlCPC-ProblemSet2019.pdf" target="_blank">Download Past Paper</a>
-                                </section>
-                            </div>
-                        </figcaption>
-                    </figure>
-                </div>
-            </section>
-        </main>
-        <footer class="footer">
-            <div class="footer-container">
-                <div class="footer-logo">
-                    <h2>UCC ACM Chapter</h2>
-                    <img src="../images/acmLogo.png" alt="ACM Logo" />
-                </div>
+        <div>
+          <figure>
+            <img
+              src="../images/event3.jpg"
+              alt="A picture of an ACM event from 2019!"
+            />
+            <figcaption>
+              <h2>2021</h2>
+              <p>
+                The 2021 hackathon was a remarkable event, showcasing the
+                resilience and creativity of participants despite the challenges
+                of the year. Teams came together tackling complex problems with
+                enthusiasm and ingenuity. The energy and dedication displayed by
+                everyone made it a truly memorable experience, highlighting the
+                power of innovation and collaboration.
+              </p>
+              <button id="2021">View More</button>
+              <div id="modal2021" class="modal">
+                <section id="modal2021Content" class="modal-content">
+                  <h3>2021 Past Paper</h3>
+                  <p>
+                    The 2021 past papers are available to use and download here!
+                  </p>
+                  <a href="files/IrlCPC_Problems_2021.pdf" target="_blank"
+                    >Download Past Paper</a
+                  >
+                </section>
+              </div>
+            </figcaption>
+          </figure>
+        </div>
+        <div>
+          <figure>
+            <img
+              src="../images/event.jpg"
+              alt="A picture of an ACM event from 2019!"
+            />
+            <figcaption>
+              <h2>2019</h2>
+              <p>
+                In 2019, we hosted another exciting hackathon that brought
+                together passionate minds to solve real-world problems. Teams
+                worked tirelessly, blending creativity and technical skills to
+                develop innovative solutions. The event was a celebration of
+                collaboration and determination, leaving everyone inspired and
+                eager for more. It was a fantastic way to kick off the year!
+              </p>
+              <button id="2019">View More</button>
+              <div id="modal2019" class="modal">
+                <section id="modal2019Content" class="modal-content">
+                  <h3>2019 Past Paper</h3>
+                  <p>
+                    The 2019 past papers are available to use and download here!
+                  </p>
+                  <a href="files/IrlCPC-ProblemSet2019.pdf" target="_blank"
+                    >Download Past Paper</a
+                  >
+                </section>
+              </div>
+            </figcaption>
+          </figure>
+        </div>
+      </section>
+    </main>
+    <footer class="footer">
+      <div class="footer-container">
+        <div class="footer-logo">
+          <h2>UCC ACM Chapter</h2>
+          <img src="../images/acmLogo.png" alt="ACM Logo" />
+        </div>
 
-                <!-- Navigation Links -->
-                <div class="footer-links">
-                    <h3>Pages</h3>
-                    <ul>
-                        <li><a href="../index.html#home">Home</a></li>
-                        <li><a href="../index.html#about">About</a></li>
-                        <li><a href="../index.html#events">Events</a></li>
-                        <li><a href="../index.html#team">Our Team</a></li>
-                        <li><a href="#../index.htmlcontact">Contact</a></li>
-                    </ul>
-                </div>
+        <!-- Navigation Links -->
+        <div class="footer-links">
+          <h3>Pages</h3>
+          <ul>
+            <li><a href="../index.html#home">Home</a></li>
+            <li><a href="../index.html#about">About</a></li>
+            <li><a href="../index.html#events">Events</a></li>
+            <li><a href="../index.html#team">Our Team</a></li>
+            <li><a href="../index.html#contact">Contact</a></li>
+          </ul>
+        </div>
 
-                <!-- Contact Information -->
-                <div class="footer-contact">
-                    <h3>Contact Us</h3>
-                    <p>
-                        Email:
-                        <a href="mailto:ucccsacm@gmail.com"
-                            >ucccsacm@gmail.com</a
-                        >
-                    </p>
-                </div>
+        <!-- Contact Information -->
+        <div class="footer-contact">
+          <h3>Contact Us</h3>
+          <p>
+            Email:
+            <a href="mailto:ucccsacm@gmail.com">ucccsacm@gmail.com</a>
+          </p>
+        </div>
 
-                <!-- Location Information -->
-                <div class="footer-location">
-                    <h3>Find Us</h3>
-                    <p>UCC Campus, Western Gateway Building, Room 202</p>
-                    <p>
-                        <a
-                            href="https://maps.app.goo.gl/4LFaeuGKVdfvfGuw5"
-                            target="_blank"
-                        >
-                            University College Cork, Western Rd, Mardyke, Cork,
-                            T12 N1FK
-                        </a>
-                    </p>
-                </div>
-            </div>
+        <!-- Location Information -->
+        <div class="footer-location">
+          <h3>Find Us</h3>
+          <p>UCC Campus, Western Gateway Building, Room 202</p>
+          <p>
+            <a href="https://maps.app.goo.gl/4LFaeuGKVdfvfGuw5" target="_blank">
+              University College Cork, Western Rd, Mardyke, Cork, T12 N1FK
+            </a>
+          </p>
+        </div>
+      </div>
 
-            <div class="footer-bottom">
-                <p>&copy; 2024 UCC ACM Student Chapter. All rights reserved.</p>
-                <a
-                    href="links/privacyPolicy.html"
-                    target="_blank"
-                    class="privacy-policy"
-                >
-                    Privacy Policy
-                </a>
-                <div class="social-icons">
-                    <a
-                        href="https://www.instagram.com/uccacmchapter/"
-                        target="_blank"
-                        ><i class="fab fa-instagram"></i
-                    ></a>
-                    <a href="https://x.com/uccacm" target="_blank"
-                        ><i class="fab fa-twitter"></i
-                    ></a>
-                    <a
-                        href="https://www.linkedin.com/company/uccacm/"
-                        target="_blank"
-                        ><i class="fab fa-linkedin"></i
-                    ></a>
-                </div>
-                <a href="#top" class="back-to-top">↑</a>
-            </div>
-        </footer>
-        <script src="events.js"></script>
-    </body>
+      <div class="footer-bottom">
+        <p>&copy; 2025 UCC ACM Student Chapter. All rights reserved.</p>
+        <a
+          href="links/privacyPolicy.html"
+          target="_blank"
+          class="privacy-policy"
+        >
+          Privacy Policy
+        </a>
+        <div class="social-icons">
+          <a href="https://www.instagram.com/uccacmchapter/" target="_blank"
+            ><i class="fab fa-instagram"></i
+          ></a>
+          <a href="https://x.com/uccacm" target="_blank"
+            ><i class="fab fa-twitter"></i
+          ></a>
+          <a href="https://www.linkedin.com/company/uccacm/" target="_blank"
+            ><i class="fab fa-linkedin"></i
+          ></a>
+        </div>
+        <a href="#top" class="back-to-top">↑</a>
+      </div>
+    </footer>
+    <script src="events.js"></script>
+  </body>
 </html>
