@@ -71,6 +71,14 @@ const members = [
             "Ishaan helped develop the website, and server infrastructure.",
         linkedIn: "https://www.linkedin.com/in/ishaan-anwar-843ab519a/",
     },
+        {
+        firstName: "Leonid",
+        lastName: "Berdin",
+        role: "Webmaster Team",
+        description:
+            "Working with server/website",
+        linkedIn: "https://www.linkedin.com/me?trk=p_mwlite_feed-secondary_nav",
+    },
     {
         firstName: "Swithin",
         lastName: "Pais",
