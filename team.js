@@ -77,7 +77,7 @@ const members = [
         role: "Webmaster Team",
         description:
             "Working with server/website",
-        linkedIn: "https://www.linkedin.com/me?trk=p_mwlite_feed-secondary_nav",
+        linkedIn: "https://www.linkedin.com/in/leonid-berdin-6b2301333/",
     },
     {
         firstName: "Swithin",
