@@ -122,11 +122,21 @@ a:hover {
     border-top: 1px solid var(--color-border);
 }
 
-/* Faint tint on every other section for rhythm (currently: Partners).
-   Excluded: the "Lost? Need help?" band (plain background) and the privacy
-   policy (.legal, which keeps its own boxed card). */
-.content-section:nth-of-type(odd):not(.help-section, .legal) {
-    background: rgba(78, 222, 239, 0.035);
+/* Home page canvas: the hero's grid lines and soft glows run behind the whole
+   page as ONE continuous background, so every section shares it with no seams.
+   Glows alternate right/left down the page (positions are % of page height).
+   Applied by class="container canvas" in index.html; the footer keeps its own
+   background. To remove: delete "canvas" from that tag and everything returns
+   to the previous look (the hero keeps its own background underneath). */
+.canvas {
+    background:
+        radial-gradient(50rem 28rem at 85% 0%, rgba(78, 222, 239, 0.16), transparent 70%),
+        radial-gradient(40rem 24rem at 0% 15%, rgba(0, 119, 204, 0.2), transparent 70%),
+        radial-gradient(45rem 26rem at 100% 38%, rgba(78, 222, 239, 0.11), transparent 70%),
+        radial-gradient(45rem 26rem at 0% 60%, rgba(0, 119, 204, 0.17), transparent 70%),
+        radial-gradient(45rem 26rem at 100% 84%, rgba(78, 222, 239, 0.11), transparent 70%),
+        linear-gradient(rgba(78, 222, 239, 0.05) 1px, transparent 1px) 0 0 / 2.5rem 2.5rem,
+        linear-gradient(90deg, rgba(78, 222, 239, 0.05) 1px, transparent 1px) 0 0 / 2.5rem 2.5rem;
 }
 
 /* "Lost? Need help?" band: a section band with a little less padding */
@@ -252,6 +262,11 @@ header {
         linear-gradient(rgba(78, 222, 239, 0.05) 1px, transparent 1px) 0 0 / 2.5rem 2.5rem,
         linear-gradient(90deg, rgba(78, 222, 239, 0.05) 1px, transparent 1px) 0 0 / 2.5rem 2.5rem;
     border-bottom: 1px solid var(--color-border);
+}
+
+/* On the canvas page the hero's background comes from the canvas instead */
+.canvas .hero {
+    background: none;
 }
 
 .hero-inner {
