@@ -4,21 +4,81 @@
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-        <title>UCC's ACM Student Chapter Main Page</title>
+        <title>UCC ACM IRLCPC 2027 | UCC's ACM Student Chapter</title>
+        <meta
+            name="description"
+            content="UCC ACM IRLCPC 2027, the Irish Collegiate Programming Competition, takes place on 6 March 2027. Hosted by UCC's ACM Student Chapter at University College Cork."
+        />
+        <link rel="canonical" href="https://acm.ucc.ie/" />
+        <meta name="theme-color" content="#0a0e27" />
         <link rel="icon" href="/icons/favicon.png" />
+        <link rel="manifest" href="site.webmanifest" />
+
+        <!-- Social sharing (Open Graph + Twitter/X) -->
+        <meta property="og:type" content="website" />
+        <meta property="og:site_name" content="UCC ACM Student Chapter" />
+        <meta property="og:title" content="UCC ACM IRLCPC 2027" />
+        <meta
+            property="og:description"
+            content="The Irish Collegiate Programming Competition returns on 6 March 2027."
+        />
+        <meta property="og:url" content="https://acm.ucc.ie/" />
+        <!-- TODO: social share image, 1200x630 (images/social/og-image.png) -->
+        <meta property="og:image" content="https://acm.ucc.ie/images/social/og-image.png" />
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:site" content="@uccacm" />
+        <meta name="twitter:title" content="UCC ACM IRLCPC 2027" />
+        <meta
+            name="twitter:description"
+            content="The Irish Collegiate Programming Competition returns on 6 March 2027."
+        />
+        <meta name="twitter:image" content="https://acm.ucc.ie/images/social/og-image.png" />
+
         <link rel="stylesheet" href="stylesheet.css" />
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
         <link
-            href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap"
+            href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;700&display=swap"
             rel="stylesheet"
         />
+        <!-- Font Awesome -->
         <link
             rel="stylesheet"
             href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+            integrity="sha512-Fo3rlrZj/k7ujTnHg4CGR2D7kSs0v4LLanw2qksYuRlEzO+tcaEPQogQ0KaoGN26/zrn20ImR1DfuLWnOo7aBA=="
+            crossorigin="anonymous"
+            referrerpolicy="no-referrer"
         />
-        <!-- Font Awesome -->
         <link rel="stylesheet" href="changes.css" />
         <script defer src="script.js"></script>
-        <!-- Link to JS file -->
+
+        <!-- Structured data for search engines.
+             TODO: venue (location.name / location.address), registration link (add "offers" with "url") -->
+        <script type="application/ld+json">
+            {
+                "@context": "https://schema.org",
+                "@type": "Event",
+                "name": "UCC ACM IRLCPC 2027",
+                "alternateName": "Irish Collegiate Programming Competition 2027",
+                "description": "The Irish Collegiate Programming Competition, hosted by UCC's ACM Student Chapter.",
+                "startDate": "2027-03-06",
+                "eventStatus": "https://schema.org/EventScheduled",
+                "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode",
+                "location": {
+                    "@type": "Place",
+                    "name": "TODO: venue",
+                    "address": "TODO: venue address"
+                },
+                "image": ["https://acm.ucc.ie/images/poster.jpeg"],
+                "url": "https://acm.ucc.ie/#events",
+                "organizer": {
+                    "@type": "Organization",
+                    "name": "UCC ACM Student Chapter",
+                    "url": "https://acm.ucc.ie/",
+                    "email": "ucccsacm@gmail.com"
+                }
+            }
+        </script>
     </head>
 
     <body>
@@ -30,110 +90,151 @@
                     <h1 class="logo">UCC's ACM Student Chapter</h1>
                     <ul class="nav-bar" id="nav-bar">
                         <li><a href="#home">Home</a></li>
-                        <li><a href="#about">About</a></li>
-                        <li><a href="#events">Events</a></li>
                         <li><a href="#schedule">Schedule</a></li>
+                        <li><a href="#partners">Partners</a></li>
                         <li><a href="#team">Our Team</a></li>
                         <li><a href="#contact">Contact</a></li>
                         <li><a href="links/pastEvents.html" class="past-events-link">Past Events</a></li>
                     </ul>
-                    <div class="hamburger" id="hamburger">&#9776;</div>
                     <!-- Hamburger Menu -->
+                    <button
+                        class="hamburger"
+                        id="hamburger"
+                        type="button"
+                        aria-label="Menu"
+                        aria-expanded="false"
+                        aria-controls="nav-bar"
+                    >
+                        &#9776;
+                    </button>
                 </nav>
             </header>
 
-            <!-- Main Content -->
-            <section id="home" class="main">
-                <div class="main-content">
-                    <h2>Welcome to UCC's ACM Student Chapter</h2>
-                    <p>
-                        We are an organization within UCC that promotes IT
-                        events such as hackathons, cybersecurity events, and
-                        more. Our goal is to expand our team and reach as many
-                        students as possible.
-                    </p>
+            <!-- Hero: upcoming event + poster + about us, all on the first screen -->
+            <section id="home" class="hero">
+                <div class="hero-inner">
+                    <div id="events" class="hero-text">
+                        <span class="badge">Upcoming event</span>
+                        <h2 class="hero-title">UCC ACM <span>IRLCPC</span> 2027</h2>
+                        <p class="hero-subtitle">Irish Collegiate Programming Competition</p>
+                        <p class="hero-lead">
+                            Dive into a day of coding, problem-solving, and teamwork with
+                            fellow tech enthusiasts. Whether you're a beginner or a pro,
+                            there's something for everyone.
+                        </p>
+                        <ul class="hero-meta">
+                            <li>
+                                <i class="fas fa-calendar-day" aria-hidden="true"></i>
+                                <time datetime="2027-03-06">6 March 2027</time>
+                            </li>
+                            <li class="tbc">
+                                <i class="fas fa-location-dot" aria-hidden="true"></i>
+                                Western Gateway Building, UCC
+                            </li>
+                        </ul>
+                        <div class="hero-actions">
+                            <!-- TODO: registration link (2027 form URL; then add target="_blank") -->
+                            <a href="#" class="button">Register</a>
+                            <a href="#schedule" class="button button-outline">View schedule</a>
+                        </div>
+                    </div>
+
+                    <figure class="hero-poster">
+                        <img src="images/poster.jpeg" alt="UCC ACM IRLCPC 2027 poster" width="800" height="1000" />
+                    </figure>
+
+                    <div id="about" class="hero-about">
+                        <h3>About us</h3>
+                        <p>
+                            We are an organization within UCC that runs competitive
+                            programming events, including IRLCPC in March, and a hackathon
+                            in May. Our goal is to
+                            expand our team and reach as many students as possible.
+                        </p>
+                        <a href="links/pastEvents.html">See our past events & Past Papers &rarr;</a>
+                    </div>
                 </div>
             </section>
 
-            <section id="about" class="content-section">
-                <h2>About Us</h2>
-                <p>
-                    Learn more about our mission, vision, and goals as an ACM
-                    Student Chapter. We have hosted many hackathons within ucc.
-                </p>
-            </section>
-
-            <section id="events" class="content-section">
-                <h2>IrlCPC 2026</h2>
-                <h3>Register Now!</h3>
-                <p>Irish Collegiate Programming Competition</p>
-                <img
-                    src="images/SaveTheDatePoster.png"
-                    alt="Irish Collegiate Programming Competition Flyer"
-                    style="
-                        width: 100%;
-                        max-width: 600px;
-                        margin: 20px auto;
-                        display: block;
-                    "
-                />
-                <a
-                    href="https://docs.google.com/forms/d/e/1FAIpQLSfIvSFpcrXJfqKzwW_A8yxwJ6C8P5rx_2usWrQeHMORuAku0w/viewform"
-                    target="_blank"
-                    class="register-button"
-                >
-                    Register Here!
-                </a>
-            </section>
+            <!-- Scroll cue: shows there's more below the first screen (hidden by script.js once scrolled) -->
+            <a href="#schedule" class="scroll-cue">
+                Schedule <i class="fas fa-arrow-down" aria-hidden="true"></i>
+            </a>
 
             <section id="schedule" class="content-section">
                 <h2>Event Schedule</h2>
-                <p>IrlCPC 2026 - March 7, 2026</p>
+                <p>
+                    UCC ACM IRLCPC 2027 &middot;
+                    <time datetime="2027-03-06">6 March 2027</time>
+                </p>
+                <p class="tbc">Provisional schedule. Times to be confirmed.</p>
+                <!-- Google Calendar "template" link: no API, just event details in the URL.
+                     dates = all-day 6 March 2027 (end date is exclusive).
+                     TODO: once times are confirmed use e.g. dates=20270306T093000/20270306T183000,
+                     and add &location=<venue> once the venue is confirmed. -->
+                <p>
+                    <a
+                        href="https://calendar.google.com/calendar/render?action=TEMPLATE&amp;text=UCC%20ACM%20IRLCPC%202027&amp;dates=20270306/20270307&amp;ctz=Europe/Dublin&amp;details=Irish%20Collegiate%20Programming%20Competition.%20Details%3A%20https%3A%2F%2Facm.ucc.ie%2F"
+                        target="_blank"
+                        rel="noopener"
+                        class="button button-outline"
+                    >
+                        <i class="fas fa-calendar-plus" aria-hidden="true"></i> Add to Google Calendar
+                    </a>
+                </p>
+                <!-- TODO: confirm 2027 sessions and times (2026 times kept in comments for reference) -->
                 <div class="schedule-container">
-                    <div class="schedule-item">
-                        <div class="schedule-time">9:30 - 10:00</div>
+                    <div class="schedule-item" style="--i: 0">
+                        <i class="fas fa-id-badge schedule-icon" aria-hidden="true"></i>
+                        <div class="schedule-time tbc">TBC<!-- 2026: 9:30 - 10:00 --></div>
                         <div class="schedule-details">
                             <h3>Registration</h3>
                             <p>Check-in and welcome</p>
                         </div>
                     </div>
-                    <div class="schedule-item">
-                        <div class="schedule-time">9:30 - 10:30</div>
+                    <div class="schedule-item" style="--i: 1">
+                        <i class="fas fa-mug-hot schedule-icon" aria-hidden="true"></i>
+                        <div class="schedule-time tbc">TBC<!-- 2026: 9:30 - 10:30 --></div>
                         <div class="schedule-details">
                             <h3>Coffee/Tea and Networking</h3>
                             <p>Meet other participants and enjoy refreshments</p>
                         </div>
                     </div>
-                    <div class="schedule-item">
-                        <div class="schedule-time">10:30 - 11:30</div>
+                    <div class="schedule-item" style="--i: 2">
+                        <i class="fas fa-laptop-code schedule-icon" aria-hidden="true"></i>
+                        <div class="schedule-time tbc">TBC<!-- 2026: 10:30 - 11:30 --></div>
                         <div class="schedule-details">
                             <h3>Practice Session</h3>
                             <p>Warm up and test the competition environment</p>
                         </div>
                     </div>
-                    <div class="schedule-item">
-                        <div class="schedule-time">11:30 - 13:00</div>
+                    <div class="schedule-item" style="--i: 3">
+                        <i class="fas fa-utensils schedule-icon" aria-hidden="true"></i>
+                        <div class="schedule-time tbc">TBC<!-- 2026: 11:30 - 13:00 --></div>
                         <div class="schedule-details">
                             <h3>Lunch and more Networking</h3>
                             <p>Enjoy lunch and connect with fellow competitors</p>
                         </div>
                     </div>
-                    <div class="schedule-item">
-                        <div class="schedule-time">13:00 - 17:00</div>
+                    <div class="schedule-item main-stage" style="--i: 4">
+                        <i class="fas fa-code schedule-icon" aria-hidden="true"></i>
+                        <div class="schedule-time tbc">TBC<!-- 2026: 13:00 - 17:00 --></div>
                         <div class="schedule-details">
                             <h3>Competition</h3>
                             <p>Main programming competition begins</p>
                         </div>
                     </div>
-                    <div class="schedule-item">
-                        <div class="schedule-time">17:00 - 17:20</div>
+                    <div class="schedule-item" style="--i: 5">
+                        <i class="fas fa-cookie-bite schedule-icon" aria-hidden="true"></i>
+                        <div class="schedule-time tbc">TBC<!-- 2026: 17:00 - 17:20 --></div>
                         <div class="schedule-details">
                             <h3>Coffee/Tea/Snacks and Networking</h3>
                             <p>Refreshments break while results are finalized</p>
                         </div>
                     </div>
-                    <div class="schedule-item">
-                        <div class="schedule-time">17:00 - 18:30</div>
+                    <div class="schedule-item" style="--i: 6">
+                        <i class="fas fa-trophy schedule-icon" aria-hidden="true"></i>
+                        <div class="schedule-time tbc">TBC<!-- 2026: 17:00 - 18:30 --></div>
                         <div class="schedule-details">
                             <h3>Award Ceremony & Short Company Presentations</h3>
                             <p>Winners announced, prizes awarded, and partner presentations</p>
@@ -142,140 +243,70 @@
                 </div>
             </section>
 
-            <section id="partners" class="content-section">
+            <!-- "partners-tba" hides the logos behind mystery tiles until 2027 partners are
+                 confirmed. To reveal: update the logos below and delete "partners-tba". -->
+            <section id="partners" class="content-section partners-tba">
+                <span class="badge">Supported by</span>
                 <h2>Our Partners</h2>
                 <p>We are grateful to our partners for their support in making our events possible.</p>
+                <p class="partners-status">
+                    <i class="fas fa-lock" aria-hidden="true"></i>
+                    Our IRLCPC 2027 partners will be announced soon.
+                </p>
                 <div class="partners-container">
-                    <div class="partner" onclick="expandSponsor(this)">
+                    <div class="partner">
                         <img src="images/cadence.png" alt="Cadence">
                     </div>
-                    <div class="partner" onclick="expandSponsor(this)">
+                    <div class="partner">
                         <img src="images/netapp.png" alt="NetApp">
                     </div>
-                    <div class="partner" onclick="expandSponsor(this)">
+                    <div class="partner">
                         <img src="images/nginx.png" alt="NginX">
                     </div>
-                    <div class="partner" onclick="expandSponsor(this)">
+                    <div class="partner">
                         <img src="images/keelvar.png" alt="Keelvar">
                     </div>
-                    <div class="partner" onclick="expandSponsor(this)">
-                        <img src="images/google.png" alt="Google" onerror="this.style.display='none'; this.parentElement.innerHTML='<h3 style=\'color: #4edeef; margin: 0;\'>Google</h3>';">
+                    <div class="partner">
+                        <img src="images/google.png" alt="Google">
                     </div>
-                    <div class="partner" onclick="expandSponsor(this)">
+                    <div class="partner">
                         <img src="images/f5.png" alt="F5">
                     </div>
-                    <div class="partner" onclick="expandSponsor(this)">
+                    <div class="partner">
                         <img src="images/insight.png" alt="Insight">
                     </div>
                     <!-- Add more partners as needed -->
                 </div>
+
+                <div class="partner-cta">
+                    <div>
+                        <h3>Partner with IRLCPC 2027</h3>
+                        <p>Get in touch about sponsoring UCC ACM IRLCPC 2027.</p>
+                    </div>
+                    <a href="mailto:ucccsacm@gmail.com?subject=IRLCPC%202027%20partnership" class="button">
+                        Become a partner <i class="fas fa-arrow-right" aria-hidden="true"></i>
+                    </a>
+                </div>
             </section>
 
             <section id="team" class="content-section">
+                <span class="badge">The committee</span>
                 <h2>Meet Our Team</h2>
-                <div class="team-scroll">
-                    <button
-                        class="scroll-button left"
-                        onclick="scrollTeamContainer(-300)"
-                    >
-                        &#10094;
-                    </button>
-                    <div id="teamContainer" class="team-container"></div>
-                    <button
-                        class="scroll-button right"
-                        onclick="scrollTeamContainer(300)"
-                    >
-                        &#10095;
-                    </button>
-                </div>
+                <p>The people behind UCC's ACM Student Chapter.</p>
+                <div id="teamContainer" class="team-container"></div>
             </section>
 
-            <!-- <section id="contact" class="contact-section">
-                <div class="contact-container">
-                    <div class="contact-info">
-                        <div class="contact-title">
-                            <span class="arrow"
-                                ><i class="fas fa-arrow-right"></i
-                            ></span>
-                            <h2>Contact</h2>
-                        </div>
-                        <p class="contact-description">
-                            Directly contact us about your queries in regards to
-                            partnerships or general questions regarding our
-                            events!
-                        </p>
-                    </div> -->
-
-                    <section id="contact" class="contact-section">
-                        <div class="contact-container">
-                                <div class="contact-title">
-                                    <span class="arrow"><i class="fas fa-arrow-right"></i></span>
-                                    <h2>Contact</h2>
-                                    <p><a href="mailto:ucccsacm@gmail.com">ucccsacm@gmail.com</a></p>
-            
-                                </div>
-                                <p class="contact-description">
-                                    Directly contact us about your queries in regards to
-                                    sponsorships or general questions regarding our
-                                    events!
-                                </p>
-            
-                            <!-- Contact Form -->
-                            
-                        </div>
-                    </section>
-
-                    <!-- Contact Form -->
-
-
-                    <!-- <form
-                        class="contact-form"
-                        action="submit_form.php"
-                        method="post"
-                    >
-                        <div class="form-group">
-                            <label for="name">Name*</label>
-                            <input
-                                type="text"
-                                id="name"
-                                name="name"
-                                placeholder="Enter your name"
-                                required
-                            />
-                        </div>
-                        <div class="form-group">
-                            <label for="email">Email Address*</label>
-                            <input
-                                type="email"
-                                id="email"
-                                name="email"
-                                placeholder="Enter your email"
-                                required
-                            />
-                        </div>
-                        <div class="form-group">
-                            <label for="company">Your company</label>
-                            <input
-                                type="text"
-                                id="company"
-                                name="company"
-                                placeholder="Enter your company"
-                            />
-                        </div>
-                        <div class="form-group">
-                            <label for="message">Your message*</label>
-                            <textarea
-                                id="message"
-                                name="message"
-                                placeholder="Enter your message"
-                                rows="4"
-                                required
-                            ></textarea>
-                        </div>
-                        <button type="submit">Send Enquiry &#8594;</button>
-                    </form>
+            <!-- Help prompt: points to the email address in the footer (#contact).
+                 The band uses .content-section so it shares the sections' background. -->
+            <aside class="content-section help-section">
+                <div class="help-hint">
+                    <i class="fas fa-circle-question" aria-hidden="true"></i>
+                    <p><strong>Lost? Need help?</strong> Our email is in the footer.</p>
+                    <a href="#contact" class="button button-outline">
+                        Contact us <i class="fas fa-arrow-down" aria-hidden="true"></i>
+                    </a>
                 </div>
-            </section> -->
+            </aside>
 
             <footer class="footer">
                 <div class="footer-container">
@@ -289,15 +320,15 @@
                         <h3>Pages</h3>
                         <ul>
                             <li><a href="#home">Home</a></li>
-                            <li><a href="#about">About</a></li>
-                            <li><a href="#events">Events</a></li>
+                            <li><a href="#schedule">Schedule</a></li>
+                            <li><a href="#partners">Partners</a></li>
                             <li><a href="#team">Our Team</a></li>
-                            <li><a href="#contact">Contact</a></li>
+                            <li><a href="links/pastEvents.html">Past Events</a></li>
                         </ul>
                     </div>
 
                     <!-- Contact Information -->
-                    <div class="footer-contact">
+                    <div id="contact" class="footer-contact">
                         <h3>Contact Us</h3>
                         <p>
                             Email:
@@ -327,12 +358,7 @@
                         &copy; 2026 UCC ACM Student Chapter. All rights
                         reserved.
                     </p>
-                    <a
-                        href="links/privacyPolicy.html"
-                        target="_blank"
-                        class="privacy-policy"
-                        >Privacy Policy</a
-                    >
+                    <a href="links/privacyPolicy.html" class="privacy-policy">Privacy Policy</a>
                     <div class="social-icons">
                         <a
                             aria-label="link to instagram page"
@@ -353,7 +379,7 @@
                             ><i class="fab fa-linkedin"></i
                         ></a>
                     </div>
-                    <a href="#home" class="back-to-top">↑</a>
+                    <a href="#home" class="back-to-top" aria-label="Back to top">↑</a>
                 </div>
             </footer>
         </div>

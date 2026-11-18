@@ -1,0 +1,33 @@
+# UCC ACM Student Chapter
+
+> UCC's ACM Student Chapter is a student organisation at University College Cork (Cork, Ireland). It promotes IT events such as competitive programming events, and hosts UCC ACM IRLCPC, the Irish Collegiate Programming Competition.
+
+## Upcoming event: UCC ACM IRLCPC 2027
+
+- Name: UCC ACM IRLCPC 2027 (Irish Collegiate Programming Competition)
+- Date: 6 March 2027
+- Venue: to be confirmed
+- Registration: to be confirmed
+- Schedule: provisional, times to be confirmed
+- Details: https://acm.ucc.ie/#events
+
+## Pages
+
+- [Home](https://acm.ucc.ie/): about the chapter, IRLCPC 2027, schedule, partners, team and contact details
+- [Past Events](https://acm.ucc.ie/links/pastEvents.html): previous competitions (2021, 2023, 2024, 2025, 2026) with past problem sets
+- [Privacy Policy](https://acm.ucc.ie/links/privacyPolicy.html)
+
+## Past problem sets
+
+- [2025](https://acm.ucc.ie/links/files/IrlCPC_Problems_2025.pdf)
+- [2024](https://acm.ucc.ie/links/files/IrlCPC_Problems_2024.pdf)
+- [2023](https://acm.ucc.ie/links/files/IrlCPC_Problems%202023.pdf)
+- [2021](https://acm.ucc.ie/links/files/IrlCPC_Problems_2021.pdf)
+
+## Contact
+
+- Email: ucccsacm@gmail.com
+- Location: Western Gateway Building, Room 202, University College Cork, Western Rd, Cork, T12 N1FK
+- Instagram: https://www.instagram.com/uccacmchapter/
+- X (Twitter): https://x.com/uccacm
+- LinkedIn: https://www.linkedin.com/company/uccacm/

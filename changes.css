@@ -1,199 +1,260 @@
-.team-member {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    min-width: 13em;
-    width: 15%;
-    scroll-snap-align: center;
-    flex: 0 0 auto;
-}
+/* ==========================================================================
+   Home page components: partners and team (loaded by index.html only).
+   Variables come from stylesheet.css.
 
-.team-member .description {
-    margin-bottom: auto;
-    width: 100%;
-}
+   1. Components (partners, team)
+   2. Media queries
+   ========================================================================== */
 
-.team-container {
-    flex: 1;
-    scroll-snap-type: x mandatory;
-}
+/* 1. Components ----------------------------------------------------------- */
 
-/* Partners Section */
-#partners {
-    text-align: center;
-    padding: 100px 40px;
-    background: rgba(15, 20, 35, 0.6);
-    margin: 60px 0;
-}
-
-#partners h2 {
-    font-size: 3em;
-    color: #ffffff;
-    margin-bottom: 20px;
-    font-weight: 700;
-}
-
-#partners h2::after {
-    content: "";
-    display: block;
-    width: 80px;
-    height: 4px;
-    background: linear-gradient(90deg, #4edeef, #0077cc);
-    margin: 20px auto 0;
-    border-radius: 2px;
-}
-
-#partners p {
-    font-size: 1.3em;
-    color: #b8c5d6;
-    margin-bottom: 60px;
-    max-width: 850px;
-    margin-left: auto;
-    margin-right: auto;
-}
-
+/* Partners: full-colour logo tiles (2 per row on phones, up to 4 on desktop;
+   a short last row stays centred), then a bright "Become a partner" banner. */
 .partners-container {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-    gap: 40px;
-    max-width: 1400px;
-    margin: 0 auto;
-    padding: 20px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 1.25rem;
+    max-width: 70rem;
+    margin: 2.5rem auto 0;
 }
 
 .partner {
-    text-align: center;
-    padding: 50px 40px;
-    background: linear-gradient(145deg, rgba(30, 40, 60, 0.7), rgba(15, 20, 35, 0.7));
-    backdrop-filter: blur(15px);
-    border-radius: 25px;
-    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.5);
-    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-    cursor: pointer;
     position: relative;
-    z-index: 1;
-    border: 2px solid rgba(78, 222, 239, 0.15);
-    min-height: 200px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    flex: 0 1 min(15rem, calc(50% - 0.625rem));
+    display: grid;
+    place-items: center;
+    aspect-ratio: 3 / 2;
+    padding: clamp(1rem, 3vw, 1.75rem);
     overflow: hidden;
-}
-
-.partner > * {
-    background: rgba(255, 255, 255, 0.95);
-    padding: 30px;
-    border-radius: 15px;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
-    transition: all 0.4s ease;
-}
-
-.partner::before {
-    content: "";
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    border-radius: 25px;
-    padding: 2px;
-    background: linear-gradient(135deg, #4edeef, #0077cc);
-    -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
-    -webkit-mask-composite: xor;
-    mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
-    mask-composite: exclude;
-    opacity: 0;
-    transition: opacity 0.4s ease;
-}
-
-.partner::after {
-    content: "";
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    width: 0;
-    height: 0;
-    border-radius: 50%;
-    background: radial-gradient(circle, rgba(78, 222, 239, 0.2) 0%, transparent 70%);
-    transition: all 0.5s ease;
-    z-index: -1;
+    background: var(--color-tile);
+    border-radius: var(--radius-lg);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+    transition: transform var(--ease);
 }
 
 .partner:hover {
-    transform: translateY(-12px) scale(1.03);
-    box-shadow: 0 25px 60px rgba(78, 222, 239, 0.4);
-    border-color: rgba(78, 222, 239, 0.4);
-}
-
-.partner:hover::before {
-    opacity: 1;
-}
-
-.partner:hover::after {
-    width: 300px;
-    height: 300px;
-}
-
-.partner:hover > * {
-    background: rgba(255, 255, 255, 1);
-    box-shadow: 0 6px 20px rgba(78, 222, 239, 0.3);
-    transform: scale(1.02);
-}
-
-.partner-image-container {
-    width: 100%;
-    height: 140px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    overflow: visible;
-    padding: 10px;
+    transform: translateY(-4px);
 }
 
 .partner img {
-    max-width: 100%;
-    max-height: 140px;
     width: auto;
-    height: auto;
+    max-height: clamp(2.5rem, 8vw, 4.5rem);
     object-fit: contain;
-    transition: all 0.4s ease;
-    filter: brightness(1) contrast(1.05);
+}
+
+/* Until partners are confirmed, #partners has the class "partners-tba": logos
+   are hidden (also from screen readers) behind dark "?" tiles with a shimmer,
+   and the "announced soon" line shows. Remove the class to reveal the logos. */
+.partners-status {
+    display: none;
+}
+
+.partners-tba .partners-status {
+    display: block;
+}
+
+.partners-status i {
+    margin-right: 0.35rem;
+    color: var(--color-accent);
+}
+
+.partners-tba .partner {
+    background: var(--color-surface-raised);
+    border: 1px dashed var(--color-border-strong);
+    box-shadow: none;
+}
+
+.partners-tba .partner:hover {
+    transform: none;
+}
+
+.partners-tba .partner img {
+    visibility: hidden;
+}
+
+.partners-tba .partner::before {
+    content: "?";
+    content: "?" / ""; /* decorative: not read aloud where supported */
+    position: absolute;
+    inset: 0;
+    display: grid;
+    place-items: center;
+    color: var(--color-accent);
+    font-size: clamp(2rem, 6vw, 3rem);
+    font-weight: 700;
+}
+
+.partners-tba .partner::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(100deg, transparent 35%, rgba(78, 222, 239, 0.15) 50%, transparent 65%);
+    transform: translateX(-100%);
+    animation: shimmer 2.4s ease-in-out infinite;
+}
+
+.partners-tba .partner:nth-child(even)::after {
+    animation-delay: 0.4s;
+}
+
+/* "Become a partner" banner: bright cyan so it's the most visible block here */
+.partner-cta {
+    display: grid;
+    justify-items: center;
+    gap: 1rem;
+    max-width: 64rem; /* same width as a full row of logo tiles */
+    margin: 2rem auto 0;
+    padding: clamp(1.25rem, 3vw, 1.5rem) clamp(1.25rem, 4vw, 2rem);
+    color: var(--color-on-accent);
+    background: linear-gradient(135deg, var(--color-accent), var(--color-accent-light));
+    border-radius: var(--radius-lg);
+    box-shadow: 0 12px 36px rgba(78, 222, 239, 0.2);
+}
+
+.partner-cta h3 {
+    color: var(--color-on-accent);
+    font-size: clamp(1.1rem, 3vw, 1.35rem);
+}
+
+.partner-cta p {
+    margin-top: 0.15rem;
+    font-size: 0.95rem;
+}
+
+.partner-cta .button {
+    background: var(--color-bg);
+    color: var(--color-accent);
+    border-color: var(--color-bg);
+}
+
+.partner-cta .button:hover {
+    background: var(--color-bg-mid);
+    color: var(--color-accent-light);
+    border-color: var(--color-bg-mid);
+}
+
+/* Team: portrait photo cards in a wrapping grid. --cols sets cards per row
+   (2 on phones, 3 on tablets, 5 on desktop); a short last row stays centred. */
+.team-container {
+    --cols: 2;
+    --gap: 1rem;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: var(--gap);
+    margin-top: 2.5rem;
+}
+
+.team-member {
     position: relative;
-    z-index: 2;
+    flex: 0 0 calc((100% - (var(--cols) - 1) * var(--gap)) / var(--cols));
+    aspect-ratio: 3 / 4;
+    overflow: hidden;
+    background: var(--color-surface-raised);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-lg);
+    transition: transform var(--ease);
 }
 
-.partner:hover img {
-    filter: brightness(1.05) contrast(1.1);
-    transform: scale(1.05);
+.team-member:hover {
+    transform: translateY(-4px);
 }
 
-.partner.expanded {
-    transform: scale(1.12) translateY(-15px);
-    z-index: 3;
-    box-shadow: 0 30px 70px rgba(78, 222, 239, 0.6);
-    background: linear-gradient(145deg, rgba(40, 50, 80, 0.9), rgba(25, 30, 50, 0.9));
-    border-color: rgba(78, 222, 239, 0.6);
+.team-member img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.4s ease;
 }
 
-.partner.expanded::after {
-    width: 350px;
-    height: 350px;
+.team-member:hover img {
+    transform: scale(1.06);
 }
 
-.partner.expanded > * {
-    background: rgba(255, 255, 255, 1);
-    box-shadow: 0 8px 30px rgba(78, 222, 239, 0.5);
-    transform: scale(1.05);
+/* Missing photo falls back to the logo (team.js): show it whole, not cropped */
+.team-member img[src$="acmLogo.png"] {
+    padding: 20%;
+    object-fit: contain;
 }
 
-.partner.expanded img {
-    transform: scale(1.1);
-    filter: brightness(1.05) contrast(1.1);
+/* Name and role over a dark gradient at the bottom of the photo */
+.team-info {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    padding: 3rem 1rem 1rem;
+    text-align: left;
+    background: linear-gradient(transparent, rgba(10, 14, 39, 0.95) 60%);
 }
 
-.partner.dimmed {
-    opacity: 0.25;
-    filter: grayscale(100%) blur(2px);
-    transform: scale(0.95);
+.team-info h3 {
+    font-size: clamp(0.95rem, 2.5vw, 1.1rem);
+}
+
+.team-info p {
+    color: var(--color-accent);
+    font-size: 0.75rem;
+    font-weight: 700;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+}
+
+/* LinkedIn badge, top-right: the only tap target on touch screens.
+   (.team-link i beats Font Awesome's own .fab display rule.) */
+.team-link i {
+    position: absolute;
+    top: 0.5rem;
+    right: 0.5rem;
+    display: grid;
+    place-items: center;
+    width: 44px;
+    height: 44px;
+    background: rgba(10, 14, 39, 0.8);
+    color: var(--color-accent);
+    border-radius: 50%;
+    font-size: 1.1rem;
+}
+
+/* The link itself is invisible, so show keyboard focus on the badge */
+.team-link:focus-visible {
+    outline: none;
+}
+
+.team-link:focus-visible i {
+    outline: 3px solid var(--color-accent);
+    outline-offset: 2px;
+}
+
+/* Mouse users: stretch the link over the whole card. Touch screens skip this,
+   so a tap on the photo while scrolling can't open LinkedIn by accident. */
+@media (hover: hover) and (pointer: fine) {
+    .team-link::after {
+        content: "";
+        position: absolute;
+        inset: 0;
+    }
+}
+
+/* 2. Media queries -------------------------------------------------------- */
+@media (min-width: 40em) {
+    .team-container {
+        --cols: 3;
+    }
+}
+
+@media (min-width: 48em) {
+    .partner-cta {
+        grid-template-columns: 1fr auto;
+        align-items: center;
+        justify-items: start;
+        text-align: left;
+    }
+}
+
+@media (min-width: 64em) {
+    .team-container {
+        --cols: 5;
+    }
 }

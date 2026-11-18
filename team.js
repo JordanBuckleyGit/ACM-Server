@@ -1,12 +1,4 @@
 const members = [
-    // {
-    //     firstName: "Andrew",
-    //     lastName: "Nash",
-    //     role: "IT/Sys Admin",
-    //     description:
-    //         "Andrew oversees all technical matters in the ACM Chapter.",
-    //     linkedIn: "https://www.linkedin.com/in/a-nash/",
-    // },
     {
         firstName: "David",
         lastName: "Shanahan",
@@ -39,14 +31,6 @@ const members = [
             "Jordan created/manages the website and online infrastructure.",
         linkedIn: "https://www.linkedin.com/in/jordan05/",
     },
-    // {
-    //     firstName: "Michael",
-    //     lastName: "Xuereb",
-    //     role: "Finance Officer",
-    //     description:
-    //         "Michael ensures all finances are well-managed for events.",
-    //     linkedIn: "https://www.linkedin.com/in/michael-xuereb1337/",
-    // },
     {
         firstName: "Dan",
         lastName: "Bokete",
@@ -112,37 +96,41 @@ const members = [
     // },
 ];
 
+// Render every card in one DOM write. Photos live at images/firstname_lastname.jpg.
+// The LinkedIn badge is the link (on touch screens only the badge is tappable, so
+// scrolling past a card can't open LinkedIn by accident; see changes.css).
 const teamContainer = document.getElementById("teamContainer");
 
-let html = "";
-members.forEach((person) => {
-    const imagePath = `images/${person.firstName.toLowerCase()}_${person.lastName.toLowerCase()}.jpg`;
-    const rawHtml = `<div
-    class="team-member"
-    onclick="expandTeamMember(this)"
-    >
-    <img
-        src="${imagePath}"
-        alt="An image of ${person.firstName} ${person.lastName}"
-        onerror="this.src='images/acmLogo.png'"
-    />
-    <h3>${person.firstName} ${person.lastName ? person.lastName : ""}</h3>
-    <p class="role">${person.role ? person.role : "Acm Member"}</p>
-    <p class="description">
-        ${
-            person.description
-                ? person.description
-                : `${person.firstName} is apart of the team who contributes to the organisation of the event`
-        }
-    </p>
-    <a
-        aria-label="link to linked in page"
-        href="${person.linkedIn ? person.linkedIn : "#home"}"
-    >
-        <i class="fab fa-linkedin"></i>
-    </a>
-    </div>`;
-    html += rawHtml;
-});
+teamContainer.innerHTML = members
+    .map(({ firstName, lastName, role = "ACM Member", linkedIn }) => {
+        const name = `${firstName} ${lastName}`;
+        const photo = `images/${firstName.toLowerCase()}_${lastName.toLowerCase()}.jpg`;
+        const link = linkedIn
+            ? `<a class="team-link" href="${linkedIn}" target="_blank" rel="noopener"
+                  aria-label="${name} on LinkedIn"><i class="fab fa-linkedin" aria-hidden="true"></i></a>`
+            : "";
 
-teamContainer.innerHTML = html;
+        return `
+        <div class="team-member">
+            <img src="${photo}" alt="${name}" loading="lazy" decoding="async" />
+            <div class="team-info">
+                <h3>${name}</h3>
+                <p>${role}</p>
+            </div>
+            ${link}
+        </div>`;
+    })
+    .join("");
+
+// Missing photo: fall back to the ACM logo (once, so a missing logo can't loop).
+// Image errors don't bubble, so listen in the capture phase.
+teamContainer.addEventListener(
+    "error",
+    (event) => {
+        const img = event.target;
+        if (img.tagName === "IMG" && !img.src.endsWith("acmLogo.png")) {
+            img.src = "images/acmLogo.png";
+        }
+    },
+    true
+);
