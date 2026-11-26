@@ -89,7 +89,8 @@ All 12 active members have a matching photo and a valid LinkedIn link. Photos ar
 - [ ] **Decide the final address.** The site uses `https://acm.ucc.ie` everywhere a full URL is needed, but it's currently hosted at `https://jordanbuckleygit.github.io/ACM-Server/`. Once decided, update the address in:
   - `index.html`, `links/pastEvents.html`, `links/privacyPolicy.html`: the `canonical`, `og:url` and `og:image` tags, and the search-engine data
   - `sitemap.xml`, `robots.txt` and `llms.txt`
-- [ ] **App icons:** add `icons/icon-192.png` and `icons/icon-512.png`, referenced by `site.webmanifest`.
+- [x] **App icons:** `icons/icon-192.png` and `icons/icon-512.png` made from the ACM logo.
+- [ ] **Cache headers on the university server:** GitHub Pages only lets browsers cache files for 10 minutes, and that can't be changed. On the university server, ask for longer caching of images, CSS and JS (e.g. Apache `mod_expires`, or nginx `expires 30d;`). Lighthouse estimated this saves about 322 KB on repeat visits.
 - [ ] **Update `llms.txt`** (the summary for AI search tools): mention the May hackathon once it's confirmed.
 - [ ] **Copyright year:** change `&copy; 2026` to 2027 in the footer of all 3 pages in January.
 - [x] **Mac system files:** `.gitignore` now ignores `.DS_Store` (and the image backups).

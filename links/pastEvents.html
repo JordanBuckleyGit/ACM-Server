@@ -37,18 +37,7 @@
         <link rel="stylesheet" href="events.css" />
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-        <link
-            href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;700&display=swap"
-            rel="stylesheet"
-        />
-        <!-- Font Awesome -->
-        <link
-            rel="stylesheet"
-            href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
-            integrity="sha512-Fo3rlrZj/k7ujTnHg4CGR2D7kSs0v4LLanw2qksYuRlEzO+tcaEPQogQ0KaoGN26/zrn20ImR1DfuLWnOo7aBA=="
-            crossorigin="anonymous"
-            referrerpolicy="no-referrer"
-        />
+        <link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin />
         <script defer src="../script.js"></script>
         <script defer src="events.js"></script>
     </head>
@@ -57,7 +46,7 @@
             <header>
                 <!-- Navigation Bar -->
                 <nav class="nav-container">
-                    <img src="../images/acmLogo.png" alt="UCC ACM logo" />
+                    <img src="../images/acmLogo.png" alt="UCC ACM logo" width="192" height="191" />
                     <h1 class="logo">UCC's ACM Student Chapter</h1>
                     <ul class="nav-bar" id="nav-bar">
                         <li><a href="../index.html#home">Home</a></li>
@@ -88,6 +77,7 @@
                         alt="UCC ACM IRLCPC 2027 poster"
                         width="800"
                         height="1000"
+                        fetchpriority="high"
                         id="upcomingEventImage"
                     />
                     <button class="fullscreen-icon" type="button" aria-label="View poster fullscreen">
@@ -133,6 +123,8 @@
                             <img
                                 src="../images/events/event5.jpeg"
                                 alt="A picture of IRLCPC 2026!"
+                                width="1600"
+                                height="1066"
                                 loading="lazy"
                                 decoding="async"
                             />
@@ -159,6 +151,8 @@
                             <img
                                 src="../images/events/event4.JPG"
                                 alt="A picture of an ACM event!"
+                                width="1600"
+                                height="900"
                                 loading="lazy"
                                 decoding="async"
                             />
@@ -182,6 +176,8 @@
                             <img
                                 src="../images/events/event2.jpg"
                                 alt="A picture of an ACM event from 2024!"
+                                width="1317"
+                                height="878"
                                 loading="lazy"
                                 decoding="async"
                             />
@@ -205,6 +201,8 @@
                             <img
                                 src="../images/events/event.jpg"
                                 alt="A picture of an ACM event from 2019!"
+                                width="1319"
+                                height="878"
                                 loading="lazy"
                                 decoding="async"
                             />
@@ -228,6 +226,8 @@
                             <img
                                 src="../images/events/event3.jpg"
                                 alt="A picture of an ACM event from 2021!"
+                                width="1319"
+                                height="878"
                                 loading="lazy"
                                 decoding="async"
                             />
@@ -253,7 +253,7 @@
                 <div class="footer-container">
                     <div class="footer-logo">
                         <h2>UCC ACM Chapter</h2>
-                        <img src="../images/acmLogo.png" alt="UCC ACM logo" />
+                        <img src="../images/acmLogo.png" alt="UCC ACM logo" width="192" height="191" loading="lazy" decoding="async" />
                     </div>
 
                     <!-- Navigation Links -->
@@ -322,5 +322,19 @@
                 </div>
             </footer>
         </div>
+        <!-- Non-critical styles, loaded last so the page can draw first:
+             the Poppins font, Font Awesome icons -->
+        <link
+            href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;700&display=swap"
+            rel="stylesheet"
+        />
+        <!-- Font Awesome -->
+        <link
+            rel="stylesheet"
+            href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+            integrity="sha512-Fo3rlrZj/k7ujTnHg4CGR2D7kSs0v4LLanw2qksYuRlEzO+tcaEPQogQ0KaoGN26/zrn20ImR1DfuLWnOo7aBA=="
+            crossorigin="anonymous"
+            referrerpolicy="no-referrer"
+        />
     </body>
 </html>

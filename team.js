@@ -103,7 +103,7 @@ teamContainer.innerHTML = members
 
         return `
         <div class="team-member">
-            <img src="${photo}" alt="${name}" loading="lazy" decoding="async" />
+            <img src="${photo}" alt="${name}" width="600" height="800" loading="lazy" decoding="async" />
             <div class="team-info">
                 <h3>${name}</h3>
                 ${role ? `<p>${role}</p>` : ""}
