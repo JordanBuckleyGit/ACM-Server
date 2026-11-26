@@ -75,14 +75,11 @@ All 12 active members have a matching photo and a valid LinkedIn link. Photos ar
 
 ## 7. Privacy policy (`links/privacyPolicy.html`)
 
-- [ ] **Write the real content.** Everything in *italics* on the page is placeholder text marked `class="tbc"`:
-  - what personal information is collected (e.g. registration forms, team member form) and why
-  - how it's used, and the legal basis
-  - other services used (e.g. Google Forms / Google Drive)
-  - how long it's kept
-  - visitors' data protection (GDPR) rights and how to exercise them
-- [ ] **Remove the placeholders:** set the "Last updated" date, then delete the "Placeholder: this policy has not been finalised yet." line.
-- [ ] **Review:** have the committee, and ideally UCC, check it before publishing.
+- [x] Written: the site collects no personal data (no cookies, analytics, tracking or forms). It covers the host, Google Fonts and cdnjs, external links, email, GDPR rights and the Data Protection Commission.
+- [ ] **Registration form:** add a short privacy note at the top of the Google Form (what's collected, why, that you may invite people to future events and they can opt out), and link to this policy.
+- [ ] **Retention:** agree as a committee how long registration data is kept (e.g. delete after a set number of years), then state the period in the policy.
+- [ ] Have the committee read it through once.
+- [ ] **Keep it accurate:** if the site ever adds analytics, a contact form, cookies or an embed (YouTube, maps, …), update the policy and its "Last updated" date.
 
 ## 8. Site address, search engines and deployment
 
