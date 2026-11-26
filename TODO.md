@@ -8,11 +8,7 @@ Tick items off (`[x]`) as you go.
 
 ## 1. Broken on the live site right now
 
-- [ ] **Team photos are missing.** Commit `f64043e` deleted 8 photos, so those cards show the ACM logo.
-  - **Fix:** restore them from the previous commit, then commit and push. If you're replacing them with compressed versions instead, use the same filenames (section 2).
-    ```
-    git checkout f266b0d -- images/david_shanahan.jpg images/andrea_visentin.jpg images/mikolaj_wujek.jpg images/dan_bokete.jpg images/jake_sparks.jpg images/ishaan_anwar.jpg images/leonid_berdin.jpg images/swithin_pais.jpg
-    ```
+- [x] **Team photos restored.** Andrea, Dan, Leonid, Mikolaj and Jake's photos were brought back from commit `f266b0d` into `images/team/`. Commit them with everything else (they're new files, so stage them).
 - [ ] **Favicon doesn't load.** `index.html` uses `href="/icons/favicon.png"`. The leading `/` points at the domain root, but the site lives under `/ACM-Server/` on GitHub Pages, so the browser gets a 404.
   - **Fix:** in `index.html`, change it to `<link rel="icon" type="image/png" href="icons/favicon.png" />`. The other two pages already use relative paths.
 - [ ] **"Download 2026 Past Paper" gives a 404.** The file doesn't exist yet.
@@ -22,34 +18,17 @@ Tick items off (`[x]`) as you go.
   - **Fix:** put the 2027 registration form URL in `href`, and add `target="_blank" rel="noopener"`.
   - **Also:** add the link to the search-engine data in `index.html` (the `<script type="application/ld+json">` block): `"offers": { "@type": "Offer", "url": "<form URL>" }`.
 
-## 2. Images: compress and use consistent types
+## 2. Images
 
-- **Why:** several images are far bigger than they're shown, which slows the site, especially on phones.
-- **Rule of thumb:**
-  - **Photos** (team, events, poster): **JPEG**, saved as lowercase **`.jpg`**, about 75% quality.
-    - Team photos: about **600 x 800** (portrait 3:4, face centred), under about 100 KB.
-    - Event photos and poster: up to **1600 px** wide, under about 250 KB.
-  - **Logos:** **PNG with a transparent background**, about **400 px** wide.
-- **How:** macOS has a built-in tool, `sips`. For example, run this in the `images/` folder:
-  ```
-  sips -Z 1600 -s format jpeg -s formatOptions 75 event5.jpeg --out event5.jpg
-  ```
-  `-Z` sets the longest side in pixels. Squoosh (squoosh.app) also works and lets you compare quality.
+Run **`./scripts/compress-images.sh`** from the project root whenever you add or replace images. The script is local only: `scripts/` is git-ignored.
+- It shrinks images to the size they're shown at and fixes wrong file types.
+- Originals are backed up to `images-originals/`, which git ignores.
+- It uses `sips`, which is built into macOS.
 
-- [ ] Shrink `event5.jpeg` (724 KB), `event2.jpg` (376 KB), `event.jpg` (320 KB), `event4.JPG` (308 KB) and `event3.jpg` (252 KB).
-- [ ] Resize `acmLogo.png` (2137 x 2126 px, 308 KB). It's only ever shown at 44-56 px, so about **256 x 256** is plenty.
-- [ ] Re-add the team photos at about 600 x 800, if they've been compressed (section 1).
-- [ ] **Fix the mislabelled logos:**
-  - `nginx.png` is really a JPEG with a white background. Get a transparent PNG.
-  - `google.png` is really a WebP. Re-save it as a real PNG.
-- [ ] **Make extensions consistent:** rename `event4.JPG`, `event5.jpeg` and `poster.jpeg` to `.jpg`.
-  - ⚠️ Update every reference when you rename. Search the HTML files for the old name:
-    - **`event4.JPG` / `event5.jpeg`:** `links/pastEvents.html`.
-    - **`poster.jpeg`:** 4 places: the hero in `index.html`, the search-engine data in `index.html`, and the card plus fullscreen view in `links/pastEvents.html`.
-  - GitHub Pages is **case-sensitive** (`Event.jpg` ≠ `event.jpg`), even though your Mac isn't.
-- [ ] **Delete unused images:** `SaveTheDatePoster.png` (4 MB!), `acmPoster.jpg` and `logo.png`. Nothing on the site uses them.
-  - `jordan_buckley.jpg` *is* used. `team.js` builds photo names automatically, so it's not referenced by name anywhere.
-- [ ] After resizing the poster, update its `width="800" height="1000"` attributes (3 places) to the new pixel size.
+- [x] Team photos, logos and `acmLogo.png` compressed (images folder: 12 MB → 3.8 MB).
+- [ ] `images/events/event5.jpeg` is still 720 KB. It's already well compressed at 1600 px wide; lowering the events limit in the script (e.g. to 1200) would shrink it further.
+- [ ] *(Optional)* Rename `event4.JPG`, `event5.jpeg` and `poster.jpeg` to lowercase `.jpg` for consistency. GitHub Pages is case-sensitive, so update every reference: `links/pastEvents.html` for the event photos, and for the poster the hero and search-engine data in `index.html` plus the card and fullscreen view in `links/pastEvents.html`.
+- [ ] *(Optional)* Get a transparent-background version of `images/partners/nginx.png`. It currently has a white background.
 
 ## 3. IRLCPC 2027 event details
 
@@ -76,23 +55,14 @@ Tick items off (`[x]`) as you go.
   3. The `stage-on` / `arrow-on` keyframe percentages. They assume 7 stages, with one step ≈ 14.3%.
   4. The desktop "snake" placement rules in the `64em` media query (`grid-area` for stages 5 to 7, and which arrows point right, down or left).
 
-## 5. Team section (`team.js`)
+## 5. Team section (`team.js`, photos in `images/team/`)
 
-- [ ] **Add new members** to the `members` list. Cards appear in list order, so put the Chair first.
-  ```js
-  {
-      firstName: "First",
-      lastName: "Last",
-      role: "Role",
-      linkedIn: "https://www.linkedin.com/in/…/",
-  },
-  ```
-  - Save each photo as `images/firstname_lastname.jpg`, all lowercase, matching the names exactly as typed (section 2 has the size).
-  - If a photo is missing, the card shows the ACM logo, so a misnamed file is easy to spot.
-  - Names with an apostrophe need escaping, like `"O\'Brien"`. Spaces and accents make awkward filenames.
-- [ ] **Remove members** who have left. Comment them out with `//` or delete them.
-- [ ] **Fix a typo:** Jake's role says `"Finance Office"`. It should probably be `"Finance Officer"`.
-- [ ] **Google Form for members:** collect first name, last name, role (dropdown), LinkedIn URL (validated), photo upload, and a **consent** checkbox for showing their name, role, photo and LinkedIn on the site.
+All 12 active members have a matching photo and a valid LinkedIn link. Photos are compressed (run the local `./scripts/compress-images.sh` after adding new ones).
+
+- [ ] **Hein Htet Soe's photo is too small** (198 x 296 px). It will look blurry on the card, so get a larger one (about 600 x 800).
+- [ ] **Check the crops:** Alona, Gerwin and Evan's photos are landscape and Jacob's is very tall, so the cards crop them from the centre. Make sure no faces are cut off.
+- [ ] **Card order:** cards appear in the order of the `members` list. Move entries to reorder.
+- **Photo names:** lowercase, with spaces and symbols turned into `_`, and no brackets. "Jacob (El) Egan Morely" → `jacob_el_egan_morely.jpg`. If a photo is missing, the card shows the ACM logo.
 
 ## 6. Sponsors (`index.html`, `#partners`)
 
@@ -122,7 +92,7 @@ Tick items off (`[x]`) as you go.
 - [ ] **App icons:** add `icons/icon-192.png` and `icons/icon-512.png`, referenced by `site.webmanifest`.
 - [ ] **Update `llms.txt`** (the summary for AI search tools): mention the May hackathon once it's confirmed.
 - [ ] **Copyright year:** change `&copy; 2026` to 2027 in the footer of all 3 pages in January.
-- [ ] **Stop committing Mac system files:** add a `.gitignore` containing `.DS_Store`.
+- [x] **Mac system files:** `.gitignore` now ignores `.DS_Store` (and the image backups).
 - [ ] **Know where pushes go:**
   - On `main`, pushing goes to your personal repo `JordanBuckleyGit/ACM-Server`, which powers GitHub Pages.
   - The chapter repo is `ucc-acm-chapter/ucc-acm-website` (branch `migration-from-server`).

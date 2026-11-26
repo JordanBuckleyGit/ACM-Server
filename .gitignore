@@ -1,0 +1,8 @@
+# macOS system files
+.DS_Store
+
+# Local helper scripts (kept on this machine only)
+scripts/
+
+# Backups made by scripts/compress-images.sh
+images-originals/

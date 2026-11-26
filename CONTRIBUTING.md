@@ -113,11 +113,12 @@ These keep the site fast, secure and easy to maintain. PRs that break them will 
 - **Keep HTML changes minimal:** keep the existing page structure and content order. Add classes or semantic wrappers rather than restructuring.
 
 ### Images
+- **Compress before committing:** resize images to the sizes below before adding them. On a Mac, the built-in `sips` tool does it, e.g. `sips -Z 1000 -s format jpeg -s formatOptions 82 photo.jpg --out images/team/first_last.jpg`. Squoosh (squoosh.app) also works.
 - **Photos** (team, events, posters): `.jpg` (lowercase).
   - Team photos: about 600 x 800 (portrait, face centred), under about 100 KB.
   - Event photos and posters: up to 1600 px wide, under about 250 KB.
 - **Logos:** `.png` with a transparent background, about 400 px wide.
-- **Team photo names** must match `images/firstname_lastname.jpg` exactly, all lowercase.
+- **Team photo names** must match `images/team/firstname_lastname.jpg` exactly, all lowercase.
 - **Names are case-sensitive.** GitHub Pages runs on Linux (`Photo.jpg` ≠ `photo.jpg`), even if your computer doesn't care.
 
 ---
