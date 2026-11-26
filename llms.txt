@@ -1,6 +1,6 @@
 # UCC ACM Student Chapter
 
-> UCC's ACM Student Chapter is a student organisation at University College Cork (Cork, Ireland). It promotes IT events such as competitive programming events, and hosts UCC ACM IRLCPC, the Irish Collegiate Programming Competition.
+> UCC's ACM Student Chapter is a student organisation at University College Cork (Cork, Ireland). It runs competitive programming events, including UCC ACM IRLCPC (the Irish Collegiate Programming Competition) in March.
 
 ## Upcoming event: UCC ACM IRLCPC 2027
 

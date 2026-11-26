@@ -27,7 +27,7 @@ Tick items off (`[x]`) as you go.
 - **Why:** several images are far bigger than they're shown, which slows the site, especially on phones.
 - **Rule of thumb:**
   - **Photos** (team, events, poster): **JPEG**, saved as lowercase **`.jpg`**, about 75% quality.
-    - Team photos: about **600 × 800** (portrait 3:4, face centred), under about 100 KB.
+    - Team photos: about **600 x 800** (portrait 3:4, face centred), under about 100 KB.
     - Event photos and poster: up to **1600 px** wide, under about 250 KB.
   - **Logos:** **PNG with a transparent background**, about **400 px** wide.
 - **How:** macOS has a built-in tool, `sips`. For example, run this in the `images/` folder:
@@ -37,8 +37,8 @@ Tick items off (`[x]`) as you go.
   `-Z` sets the longest side in pixels. Squoosh (squoosh.app) also works and lets you compare quality.
 
 - [ ] Shrink `event5.jpeg` (724 KB), `event2.jpg` (376 KB), `event.jpg` (320 KB), `event4.JPG` (308 KB) and `event3.jpg` (252 KB).
-- [ ] Resize `acmLogo.png` (2137 × 2126 px, 308 KB). It's only ever shown at 44–56 px, so about **256 × 256** is plenty.
-- [ ] Re-add the team photos at about 600 × 800, if they've been compressed (section 1).
+- [ ] Resize `acmLogo.png` (2137 x 2126 px, 308 KB). It's only ever shown at 44-56 px, so about **256 x 256** is plenty.
+- [ ] Re-add the team photos at about 600 x 800, if they've been compressed (section 1).
 - [ ] **Fix the mislabelled logos:**
   - `nginx.png` is really a JPEG with a white background. Get a transparent PNG.
   - `google.png` is really a WebP. Re-save it as a real PNG.
@@ -59,12 +59,12 @@ Tick items off (`[x]`) as you go.
   - Add it to `links/pastEvents.html`: search `<!-- TODO: venue -->` in the upcoming event text.
   - Add it to the Google Calendar link (section 4): append `&location=Western%20Gateway%20Building%2C%20UCC`.
 - [ ] **Registration link:** see section 1.
-- [ ] **Social share image:** a 1200 × 630 image shown when the site is shared on WhatsApp, LinkedIn, X and similar. Save it as `images/social/og-image.png`.
+- [ ] **Social share image:** a 1200 x 630 image shown when the site is shared on WhatsApp, LinkedIn, X and similar. Save it as `images/social/og-image.png`.
   - The `<!-- TODO: social share image -->` comment appears in all 3 pages.
 
 ## 4. Schedule (`index.html`, `#schedule`)
 
-- [ ] **Times:** all 7 stages show **TBC**. Replace each `TBC<!-- 2026: … -->` with the 2027 time (e.g. `9:30 – 10:00`), and remove `class="tbc"` from those `schedule-time` divs.
+- [ ] **Times:** all 7 stages show **TBC**. Replace each `TBC<!-- 2026: … -->` with the 2027 time (e.g. `9:30 - 10:00`), and remove `class="tbc"` from those `schedule-time` divs.
 - [ ] **Overlaps:** 2026 had overlapping sessions (registration and coffee, the break and the awards). Decide whether to merge them into one stage or keep them separate.
 - [ ] **Provisional note:** remove the "Provisional schedule. Times to be confirmed." line once the times are final.
 - [ ] **Google Calendar link:**
@@ -74,7 +74,7 @@ Tick items off (`[x]`) as you go.
   1. `style="--i: n"` on each stage, numbered 0, 1, 2, … in order.
   2. `--cycle: calc(var(--step) * 7)`: change `7` to the new count.
   3. The `stage-on` / `arrow-on` keyframe percentages. They assume 7 stages, with one step ≈ 14.3%.
-  4. The desktop "snake" placement rules in the `64em` media query (`grid-area` for stages 5–7, and which arrows point right, down or left).
+  4. The desktop "snake" placement rules in the `64em` media query (`grid-area` for stages 5 to 7, and which arrows point right, down or left).
 
 ## 5. Team section (`team.js`)
 

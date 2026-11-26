@@ -96,7 +96,10 @@ const members = [
     // },
 ];
 
-// Render every card in one DOM write. Photos live at images/firstname_lastname.jpg.
+// Render every card in one DOM write. Photos live at images/firstname_lastname.jpg:
+// lowercase, with spaces and symbols turned into "_" (e.g. "Hein Htet" -> hein_htet).
+const slug = (text) => text.toLowerCase().replace(/[^a-z0-9]+/g, "_").replace(/^_|_$/g, "");
+
 // The LinkedIn badge is the link (on touch screens only the badge is tappable, so
 // scrolling past a card can't open LinkedIn by accident; see changes.css).
 const teamContainer = document.getElementById("teamContainer");
@@ -104,7 +107,7 @@ const teamContainer = document.getElementById("teamContainer");
 teamContainer.innerHTML = members
     .map(({ firstName, lastName, role = "ACM Member", linkedIn }) => {
         const name = `${firstName} ${lastName}`;
-        const photo = `images/${firstName.toLowerCase()}_${lastName.toLowerCase()}.jpg`;
+        const photo = `images/${slug(firstName)}_${slug(lastName)}.jpg`;
         const link = linkedIn
             ? `<a class="team-link" href="${linkedIn}" target="_blank" rel="noopener"
                   aria-label="${name} on LinkedIn"><i class="fab fa-linkedin" aria-hidden="true"></i></a>`

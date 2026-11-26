@@ -109,9 +109,9 @@ a:hover {
 }
 
 /* 3. Layout --------------------------------------------------------------- */
-/* Round 7: full-width section bands (to revert, see CHANGES.md "Round 7").
-   The background runs edge to edge; the side padding keeps the content
-   centred at --max-width, so every section lines up with the hero. */
+/* Full-width section bands: the background runs edge to edge; the side
+   padding keeps the content centred at --max-width, so every section lines
+   up with the hero. */
 .content-section {
     padding: clamp(3rem, 8vw, 6rem) max(var(--gutter), (100% - var(--max-width)) / 2);
     text-align: center;
@@ -818,8 +818,7 @@ header {
     transform: translateY(-3px);
 }
 
-/* Legal page (privacy policy) */
-/* Privacy page keeps the original boxed card look (pre-Round 7) */
+/* Legal page (privacy policy): a centred, boxed card */
 .legal {
     width: min(100% - 2 * var(--gutter), 52rem);
     margin: clamp(2rem, 6vw, 4rem) auto;

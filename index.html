@@ -14,7 +14,6 @@
         <link rel="icon" href="/icons/favicon.png" />
         <link rel="manifest" href="site.webmanifest" />
 
-        <!-- Social sharing (Open Graph + Twitter/X) -->
         <meta property="og:type" content="website" />
         <meta property="og:site_name" content="UCC ACM Student Chapter" />
         <meta property="og:title" content="UCC ACM IRLCPC 2027" />
@@ -23,7 +22,6 @@
             content="The Irish Collegiate Programming Competition returns on 6 March 2027."
         />
         <meta property="og:url" content="https://acm.ucc.ie/" />
-        <!-- TODO: social share image, 1200x630 (images/social/og-image.png) -->
         <meta property="og:image" content="https://acm.ucc.ie/images/social/og-image.png" />
         <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:site" content="@uccacm" />
@@ -52,8 +50,7 @@
         <link rel="stylesheet" href="changes.css" />
         <script defer src="script.js"></script>
 
-        <!-- Structured data for search engines.
-             TODO: venue (location.name / location.address), registration link (add "offers" with "url") -->
+
         <script type="application/ld+json">
             {
                 "@context": "https://schema.org",
@@ -86,7 +83,7 @@
             <header>
                 <!-- Navigation Bar -->
                 <nav class="nav-container">
-                    <img src="images/acmLogo.png" alt="Acm Logo" />
+                    <img src="images/acmLogo.png" alt="UCC ACM logo" />
                     <h1 class="logo">UCC's ACM Student Chapter</h1>
                     <ul class="nav-bar" id="nav-bar">
                         <li><a href="#home">Home</a></li>
@@ -168,10 +165,6 @@
                     <time datetime="2027-03-06">6 March 2027</time>
                 </p>
                 <p class="tbc">Provisional schedule. Times to be confirmed.</p>
-                <!-- Google Calendar "template" link: no API, just event details in the URL.
-                     dates = all-day 6 March 2027 (end date is exclusive).
-                     TODO: once times are confirmed use e.g. dates=20270306T093000/20270306T183000,
-                     and add &location=<venue> once the venue is confirmed. -->
                 <p>
                     <a
                         href="https://calendar.google.com/calendar/render?action=TEMPLATE&amp;text=UCC%20ACM%20IRLCPC%202027&amp;dates=20270306/20270307&amp;ctz=Europe/Dublin&amp;details=Irish%20Collegiate%20Programming%20Competition.%20Details%3A%20https%3A%2F%2Facm.ucc.ie%2F"
@@ -182,7 +175,6 @@
                         <i class="fas fa-calendar-plus" aria-hidden="true"></i> Add to Google Calendar
                     </a>
                 </p>
-                <!-- TODO: confirm 2027 sessions and times (2026 times kept in comments for reference) -->
                 <div class="schedule-container">
                     <div class="schedule-item" style="--i: 0">
                         <i class="fas fa-id-badge schedule-icon" aria-hidden="true"></i>
@@ -243,8 +235,6 @@
                 </div>
             </section>
 
-            <!-- "partners-tba" hides the logos behind mystery tiles until 2027 partners are
-                 confirmed. To reveal: update the logos below and delete "partners-tba". -->
             <section id="partners" class="content-section partners-tba">
                 <span class="badge">Supported by</span>
                 <h2>Our Partners</h2>
@@ -261,7 +251,7 @@
                         <img src="images/netapp.png" alt="NetApp">
                     </div>
                     <div class="partner">
-                        <img src="images/nginx.png" alt="NginX">
+                        <img src="images/nginx.png" alt="NGINX">
                     </div>
                     <div class="partner">
                         <img src="images/keelvar.png" alt="Keelvar">
@@ -312,7 +302,7 @@
                 <div class="footer-container">
                     <div class="footer-logo">
                         <h2>UCC ACM Chapter</h2>
-                        <img src="images/acmLogo.png" alt="ACM Logo" />
+                        <img src="images/acmLogo.png" alt="UCC ACM logo" />
                     </div>
 
                     <!-- Navigation Links -->
@@ -361,19 +351,19 @@
                     <a href="links/privacyPolicy.html" class="privacy-policy">Privacy Policy</a>
                     <div class="social-icons">
                         <a
-                            aria-label="link to instagram page"
+                            aria-label="Instagram"
                             href="https://www.instagram.com/uccacmchapter/"
                             target="_blank"
                             ><i class="fab fa-instagram"></i
                         ></a>
                         <a
-                            aria-label="link to twitter page"
+                            aria-label="X (Twitter)"
                             href="https://x.com/uccacm"
                             target="_blank"
                             ><i class="fab fa-twitter"></i
                         ></a>
                         <a
-                            aria-label="link to linked in page"
+                            aria-label="LinkedIn"
                             href="https://www.linkedin.com/company/uccacm/"
                             target="_blank"
                             ><i class="fab fa-linkedin"></i

@@ -114,7 +114,7 @@ These keep the site fast, secure and easy to maintain. PRs that break them will 
 
 ### Images
 - **Photos** (team, events, posters): `.jpg` (lowercase).
-  - Team photos: about 600 × 800 (portrait, face centred), under about 100 KB.
+  - Team photos: about 600 x 800 (portrait, face centred), under about 100 KB.
   - Event photos and posters: up to 1600 px wide, under about 250 KB.
 - **Logos:** `.png` with a transparent background, about 400 px wide.
 - **Team photo names** must match `images/firstname_lastname.jpg` exactly, all lowercase.
@@ -135,18 +135,3 @@ These keep the site fast, secure and easy to maintain. PRs that break them will 
 - [ ] No invented facts. Placeholders are marked `TODO` and listed in the PR description.
 - [ ] Dates use the `6 March 2027` format.
 - [ ] Images are compressed and named correctly.
-
----
-
-## For the repo owner: enforce it on GitHub
-
-To make "PRs only" automatic, protect `main`:
-
-1. Go to **Settings → Branches → Add branch protection rule** (or **Rules → Rulesets**).
-2. Set the branch name pattern to `main`.
-3. Turn on:
-   - **Require a pull request before merging**, with **1 approval**
-   - **Do not allow bypassing the above settings**
-   - **Block force pushes**
-
-After that, GitHub rejects direct pushes to `main`, even by accident.
