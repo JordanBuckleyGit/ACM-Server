@@ -850,6 +850,45 @@ header {
     font-size: 1.0625rem;
 }
 
+/* Coming soon page (links/comingSoon.html): for links that aren't ready yet */
+.coming-soon {
+    display: grid;
+    place-items: center;
+    align-content: center;
+    gap: 1rem;
+    min-height: 100vh;
+    padding: var(--gutter);
+    text-align: center;
+}
+
+.coming-soon img {
+    width: 72px;
+}
+
+.coming-soon h1 {
+    font-size: clamp(2.25rem, 9vw, 3.5rem);
+}
+
+.coming-soon p {
+    color: var(--color-text-muted);
+    font-size: 1.1rem;
+}
+
+/* "Sorry..." dots bounce one after another */
+.dots span {
+    display: inline-block;
+    color: var(--color-accent);
+    animation: dot-bounce 1.4s ease-in-out infinite;
+}
+
+.dots span:nth-child(2) {
+    animation-delay: 0.2s;
+}
+
+.dots span:nth-child(3) {
+    animation-delay: 0.4s;
+}
+
 .legal a {
     color: var(--color-accent);
     text-decoration: underline;
@@ -877,6 +916,19 @@ header {
     60%,
     100% {
         transform: translateX(100%);
+    }
+}
+
+/* Coming soon page: bouncing dots */
+@keyframes dot-bounce {
+    0%,
+    60%,
+    100% {
+        transform: none;
+    }
+
+    30% {
+        transform: translateY(-0.35em);
     }
 }
 
