@@ -13,8 +13,8 @@
 
 ## Pages
 
-- [Home](https://acm.ucc.ie/): about the chapter, IRLCPC 2027, schedule, partners, team and contact details
-- [Past Events](https://acm.ucc.ie/links/pastEvents.html): previous competitions (2021, 2023, 2024, 2025, 2026) with past problem sets
+- [Home](https://acm.ucc.ie/): about the chapter, IRLCPC 2027, schedule, FAQ, partners, team and contact details
+- [Past Events](https://acm.ucc.ie/links/pastEvents.html): previous competitions (2021, 2023, 2024, 2025, 2026) with past problem sets, and links to earlier versions of this website on the Wayback Machine
 - [Privacy Policy](https://acm.ucc.ie/links/privacyPolicy.html)
 
 ## Past problem sets

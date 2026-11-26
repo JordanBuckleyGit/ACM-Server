@@ -1059,8 +1059,8 @@ header {
     }
 }
 
-/* Full nav fits from ~1090px; below that the hamburger menu is used */
-@media (min-width: 68em) {
+/* Full nav fits from ~1150px; below that the hamburger menu is used */
+@media (min-width: 72em) {
     .hamburger {
         display: none;
     }

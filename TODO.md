@@ -32,6 +32,21 @@ Both of these go to the "coming soon" page (`links/comingSoon.html`) until they'
   - Save it as `images/social/og-image.png`. All 3 pages already point to it.
   - Then remove the `<!-- TODO: social share image -->` comments in `links/pastEvents.html` and `links/privacyPolicy.html`.
 
+## 2b. FAQ (`index.html`, `#faq`, under the team section)
+
+- **Current state:** answers are based on recent competitions: the 2016 FAQ, the 2020 how-to and the 2023 event page, all archived on the Wayback Machine. The FAQ says so in one line at the top.
+- [ ] **Confirm for 2027** and update the answers:
+  - **What to bring:** currently "we'll confirm closer to the event".
+  - **Languages:** Python 3, Go, C, C++ and Java in 2023.
+  - **Linux or Windows:** depends on how the infrastructure is set up.
+  - **Eligibility:** full-time undergraduate or postgraduate.
+  - **Team size:** up to 3.
+  - **4 hours** for the problem set.
+- [ ] **Add questions once confirmed** (there's a `<!-- TODO -->` at the end of the list):
+  - the **cost** (EUR 45 per team in 2023)
+  - whether there's a **junior track** for secondary-school students (individual entry, EUR 15 in 2023)
+- [ ] **"When and where":** remove "(to be confirmed)" once the venue is confirmed.
+
 ## 3. Schedule (`index.html`, `#schedule`)
 
 - [ ] **Times:** all 7 stages show **TBC**. Replace each `TBC<!-- 2026: … -->` with the 2027 time (e.g. `9:30 - 10:00`), and remove `class="tbc"` from those `schedule-time` divs.
@@ -125,6 +140,7 @@ Regular upkeep:
 - [ ] **Copyright year:** change `&copy; 2026` to 2027 in the footer of all 3 pages in January.
 - [ ] **Sitemap dates:** after big content changes, update the `<lastmod>` dates in `sitemap.xml` (currently 2026-11-26).
 - [ ] **`llms.txt`:** mention the May hackathon once it's confirmed.
+- [ ] **Website time machine** (`links/pastEvents.html`, `.year-line`): once a year, add the newest Wayback Machine snapshot. Copy a `<li>` and change the year and the snapshot date in its link (find the dates at web.archive.org/web/*/acm.ucc.ie).
 - **Staging:** stage files one by one rather than committing everything blindly. Check the file list before every commit.
 
 ## 9. Future ideas

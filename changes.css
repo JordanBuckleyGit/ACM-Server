@@ -2,7 +2,7 @@
    Home page components: partners and team (loaded by index.html only).
    Variables come from stylesheet.css.
 
-   1. Components (partners, team)
+   1. Components (partners, team, FAQ)
    2. Media queries
    ========================================================================== */
 
@@ -235,6 +235,71 @@
         position: absolute;
         inset: 0;
     }
+}
+
+/* FAQ: native <details> questions that open and close without JavaScript */
+.faq-list {
+    display: grid;
+    gap: 0.75rem;
+    max-width: 50rem;
+    margin: 2.5rem auto 0;
+    text-align: left;
+}
+
+.faq-list details {
+    background: var(--color-surface-raised);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius);
+}
+
+.faq-list details[open] {
+    border-color: var(--color-border-strong);
+}
+
+.faq-list summary {
+    position: relative;
+    padding: 1rem 3rem 1rem 1.25rem;
+    color: var(--color-heading);
+    font-weight: 500;
+    list-style: none; /* hide the default triangle */
+    cursor: pointer;
+}
+
+.faq-list summary::-webkit-details-marker {
+    display: none; /* same, for Safari */
+}
+
+/* "+" that turns into a "x" when the question is open */
+.faq-list summary::after {
+    content: "+";
+    position: absolute;
+    top: 50%;
+    right: 1.25rem;
+    translate: 0 -50%;
+    color: var(--color-accent);
+    font-size: 1.5rem;
+    line-height: 1;
+    transition: transform var(--ease);
+}
+
+.faq-list details[open] summary::after {
+    transform: rotate(45deg);
+}
+
+.faq-list details p {
+    padding: 0 1.25rem 1.25rem;
+    color: var(--color-text-muted);
+}
+
+.faq-list details ul {
+    margin: -0.5rem 0 0;
+    padding: 0 1.25rem 1.25rem 2.5rem;
+    color: var(--color-text-muted);
+}
+
+.faq-list a {
+    color: var(--color-accent);
+    text-decoration: underline;
 }
 
 /* 2. Media queries -------------------------------------------------------- */
