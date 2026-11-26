@@ -461,6 +461,14 @@ header {
     color: var(--color-accent-light);
 }
 
+/* Calendar buttons (Google + Apple/Outlook) side by side, wrapping on phones */
+.calendar-links {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 0.75rem;
+}
+
 /* Schedule: the event's stages as numbered boxes joined by arrows.
    A highlight walks through the stages in order (box -> its arrow -> next box)
    on a loop. One column with down arrows on narrow screens; from 64em a

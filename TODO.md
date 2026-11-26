@@ -40,6 +40,11 @@ Both of these go to the "coming soon" page (`links/comingSoon.html`) until they'
 - [ ] **Google Calendar link:**
   - Change `dates=20270306/20270307` (all-day) to real start/end times, e.g. `dates=20270306T093000/20270306T183000`.
   - Add `&location=…` (section 2).
+- [ ] **Apple / Outlook calendar file** (`links/files/irlcpc-2027.ics`), once times and venue are confirmed:
+  - Replace the two `DTSTART`/`DTEND` lines with `DTSTART;TZID=Europe/Dublin:20270306T093000` and `DTEND;TZID=Europe/Dublin:20270306T183000` (your real times).
+  - Add a `LOCATION:` line with the venue.
+  - Update `DTSTAMP` to the date of the change.
+  - Keep the file's Windows-style line endings: edit it in VS Code, which preserves them.
 - [ ] **If the number of stages changes**, update these four things in `stylesheet.css` and `index.html`:
   1. `style="--i: n"` on each stage, numbered 0, 1, 2, … in order.
   2. `--cycle: calc(var(--step) * 7)`: change `7` to the new count.
@@ -90,22 +95,36 @@ Both of these go to the "coming soon" page (`links/comingSoon.html`) until they'
   - **Event photos:** `links/pastEvents.html`.
   - **Poster:** the hero and the search-engine data in `index.html`, and the card plus fullscreen view in `links/pastEvents.html`.
 
-## 8. Site address, deployment and checks
+## 8. Hosting on the college server (https://acm.ucc.ie/)
 
-- [ ] **Decide the final address.** The site uses `https://acm.ucc.ie` everywhere a full URL is needed, but it's currently hosted at `https://jordanbuckleygit.github.io/ACM-Server/`. Once decided, update:
-  - `index.html`, `links/pastEvents.html`, `links/privacyPolicy.html`: the `canonical`, `og:url` and `og:image` tags, and the search-engine data
-  - `sitemap.xml`, `robots.txt` and `llms.txt`
-- [ ] **Cache headers on the university server:** GitHub Pages only lets browsers cache files for 10 minutes, and that can't be changed. On the university server, ask for longer caching of images, CSS and JS (e.g. Apache `mod_expires`, or nginx `expires 30d;`).
-- [ ] **Copyright year:** change `&copy; 2026` to 2027 in the footer of all 3 pages in January.
-- [ ] **`llms.txt`:** mention the May hackathon once it's confirmed.
-- **Where pushes go:**
-  - On `main`, pushing goes to `JordanBuckleyGit/ACM-Server`, which powers GitHub Pages.
+The live site will be served from the root of **https://acm.ucc.ie/** on a college server. Every full URL in the site already uses that address: the canonical and sharing tags on all 3 pages, the search-engine data, `sitemap.xml`, `robots.txt` and `llms.txt`. All file paths are relative, so nothing needs changing for the move. GitHub Pages (`jordanbuckleygit.github.io/ACM-Server/`) can stay as a preview; its canonical tags point search engines to acm.ucc.ie.
+
+Ask whoever runs the server for:
+- [ ] **When the site goes public: check the `.git` folder is blocked (security).** The server deploys with `git pull`, which keeps a hidden `.git` folder inside the website folder. Not urgent while acm.ucc.ie is only reachable on the college network.
+  1. Open `https://acm.ucc.ie/.git/config`. A 404, 403 or "Forbidden" means it's fine. If it shows text (`[core]`, `[remote "origin"]`), it's exposed.
+  2. On the server, run `git remote -v`. If the URL contains a GitHub token or password, revoke that token on GitHub and switch to an SSH key or a token-free URL.
+  3. If it's exposed, ask the admin to add `RedirectMatch 404 /\.git` (Apache) or `location ~ /\.git { deny all; }` (nginx). Or, on Apache with `.htaccess` allowed, add a one-line `.htaccess` to the repo.
+- [ ] **Hide the repo's notes** (optional): `README.md`, `TODO.md` and `CONTRIBUTING.md` would also be readable at acm.ucc.ie. Block `.md` files the same way if you'd rather keep them private.
+- [ ] **HTTPS:** make sure the site has a valid certificate and that `http://` redirects to `https://`.
+- [ ] **Cache headers:** longer caching for images, CSS and JS (e.g. Apache `mod_expires`, or nginx `expires 30d;`). Lighthouse estimated this saves about 100 KB per repeat visit.
+- [ ] *(Optional)* **Custom 404 page:** now that the site is at the domain root, `ErrorDocument 404 /404.html` (Apache) or `error_page 404 /404.html;` (nginx) works. A `404.html` would need adding; the coming soon page's style can be reused.
+
+Deploying:
+- [ ] **Know which repo the server pulls from.** On the server, `git remote -v` shows it.
+  - Pushing `main` from your machine goes to `JordanBuckleyGit/ACM-Server`.
   - The chapter repo is `ucc-acm-chapter/ucc-acm-website` (branch `migration-from-server`).
-  - Check which one the university server pulls from (`git remote -v` on the server).
-- **After every push:**
-  - Wait about a minute (repo → **Actions** → "pages build and deployment" turns green).
-  - Hard-refresh with **Cmd + Shift + R**.
-- **Lighthouse:** run it in an Incognito window, on mobile, three times, and take the middle score. The Performance score varies by up to 10 points between runs.
+  - Push to whichever one the server pulls.
+- [ ] **After deploying**, open https://acm.ucc.ie/ and hard-refresh with **Cmd + Shift + R**. Check:
+  - the favicon, poster, team photos and partner tiles
+  - the past events and privacy policy pages
+  - the "coming soon" page, via the Register button
+- [ ] **Run Lighthouse on acm.ucc.ie** (Incognito, mobile, three runs, take the middle score). The college server's speed may differ from GitHub Pages.
+- [ ] **Search engines** *(optional)*: add acm.ucc.ie to Google Search Console and submit `https://acm.ucc.ie/sitemap.xml`.
+
+Regular upkeep:
+- [ ] **Copyright year:** change `&copy; 2026` to 2027 in the footer of all 3 pages in January.
+- [ ] **Sitemap dates:** after big content changes, update the `<lastmod>` dates in `sitemap.xml` (currently 2026-11-26).
+- [ ] **`llms.txt`:** mention the May hackathon once it's confirmed.
 - **Staging:** stage files one by one rather than committing everything blindly. Check the file list before every commit.
 
 ## 9. Future ideas
@@ -117,7 +136,4 @@ Both of these go to the "coming soon" page (`links/comingSoon.html`) until they'
 - [ ] **Faster icons:** replacing Font Awesome with about a dozen inline SVG icons would remove about 240 KB and an external CDN.
 - [ ] **Time-scaled schedule:** once real times exist, a timeline where each session's length matches its duration.
 - [ ] **"Happening now" highlight:** a small JS addition that highlights the current session on the day of the event.
-- [ ] **Apple and Outlook calendars:** add a small `.ics` file next to the Google Calendar button.
-- [ ] **Custom 404 page:** GitHub Pages uses a `404.html` in the repo root automatically. Other servers need a setting: `ErrorDocument 404 /404.html` (Apache) or `error_page 404 /404.html;` (nginx). The coming soon page's style could be reused for it.
 - [ ] **Rename "Partners" to "Sponsors"**, if preferred: the nav and footer links on all 3 pages, plus the section heading.
-- [ ] **2026 write-up:** add specifics if known, e.g. "with X teams from Y universities".
