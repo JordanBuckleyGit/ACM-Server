@@ -42,6 +42,7 @@ Both of these go to the "coming soon" page (`links/comingSoon.html`) until they'
   - **Eligibility:** full-time undergraduate or postgraduate.
   - **Team size:** up to 3.
   - **4 hours** for the problem set.
+- [ ] **Technical contact:** a paragraph in the languages answer (other languages like JavaScript or Rust, technical questions → Jordan) is commented out. Confirm the title and email with the team, then remove the `<!-- … -->` around it.
 - [ ] **Add questions once confirmed** (there's a `<!-- TODO -->` at the end of the list):
   - the **cost** (EUR 45 per team in 2023)
   - whether there's a **junior track** for secondary-school students (individual entry, EUR 15 in 2023)
